@@ -1,0 +1,28 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "Sherif Alghali - Tech Blog",
+  description: "IT Infrastructure and Azure expertise from a certified professional",
+  keywords: ["Azure", "Cloud", "IT Infrastructure", "Technology", "DevOps"],
+  authors: [{ name: "Sherif Alghali" }],
+  creator: "Sherif Alghali",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <body>{children}</body>
+    </html>
+  );
+}
