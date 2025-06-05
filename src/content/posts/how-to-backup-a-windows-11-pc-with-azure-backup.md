@@ -7,6 +7,8 @@ categories:
 tags: 
   - "azure"
   - "backups"
+featuredImage: "/images/CreateVault.png"
+excerpt: "Learn how to set up Azure Backup to protect your Windows 11 PC files and integrate your home lab with Azure cloud services."
 ---
 
 Over the past few months, I have built a new PC, a home lab, and an Azure environment. Over the next few weeks, I will work to better integrate all three. One of the first steps in this process is setting up Azure Backup for my Windows 11 PC.

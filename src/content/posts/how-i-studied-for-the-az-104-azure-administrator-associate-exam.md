@@ -7,7 +7,7 @@ category: "Tech"
 tags: ["azure", "certification", "cloud"]
 ---
 
-[![](https://sherifalghali.com/wp-content/uploads/2022/12/microsoft-certified-azure-administrator-associate.2.png)](https://sherifalghali.com/wp-content/uploads/2022/12/microsoft-certified-azure-administrator-associate.2.png)
+[![Azure Administrator Associate Badge](/images/microsoft-certified-azure-administrator-associate.2.png)](/images/microsoft-certified-azure-administrator-associate.2.png)
 
 When I took the Azure AZ-104 exam in August, I was able to pass confidently because I used the following resources. I hope that if you're studying for the exam, you find the same resources helpful.
 

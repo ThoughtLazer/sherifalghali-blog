@@ -25,16 +25,22 @@ export function PostCarousel({ posts }: CarouselProps) {
   }
 
   const currentPost = posts[currentIndex]
-
   return (
     <div className="relative max-w-4xl mx-auto bg-gray-50 rounded-lg overflow-hidden shadow-lg">
       <div className="relative h-96">
-        {currentPost.featuredImage && (
+        {currentPost.featuredImage ? (
           <img
             src={currentPost.featuredImage}
             alt={currentPost.title}
             className="w-full h-full object-cover"
           />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
+            <div className="text-center text-white">
+              <h2 className="text-3xl font-bold mb-2">Tech Blog</h2>
+              <p className="text-xl opacity-90">Azure • Cloud • Infrastructure</p>
+            </div>
+          </div>
         )}
         
         <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-6">

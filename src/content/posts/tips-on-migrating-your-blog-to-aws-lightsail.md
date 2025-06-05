@@ -4,9 +4,11 @@ date: 2024-02-28
 categories: 
   - "cloud-technologies"
   - "tech"
+featuredImage: "/images/LightsailLogo.png"
+excerpt: "Practical tips and solutions for migrating your WordPress blog from traditional hosting to AWS Lightsail."
 ---
 
-![](https://www.sherifalghali.com/wp-content/uploads/2024/02/LightsailLogo.png)
+![AWS Lightsail Logo](/images/LightsailLogo.png)
 
 [](https://www.sherifalghali.com/2023/01/24/tips-on-migrating-your-blog-to-aws-lightsail/)
 
