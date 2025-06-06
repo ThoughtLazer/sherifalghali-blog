@@ -14,7 +14,7 @@ This is the workflow on how to migrate a Nutanix AHV disk from one VM to another
 
 The process to do this is outlined in both Nutanix [KB 3577](https://portal.nutanix.com/page/documents/kbs/details?targetId=kA032000000PMcKCAW) and [KB 8062](https://portal.nutanix.com/page/documents/kbs/details?targetId=kA00e000000Cr6CCAS). Unfortunately, the way it is worded can be confusing to some without a lot of Nutanix experience. This process requires you to open an SSH (using Putty, Tera Term, etc.) session to one of the CVMs in the cluster.  
 
-**Step 1. Find the VM Disk File**
+## Step 1. Find the VM Disk File
 
 To find the VM Disk file you will use the command below:
 
@@ -24,11 +24,11 @@ To find the VM Disk file you will use the command below:
 
 The output should look like the picture below.
 
-[![](https://sherifalghali.com/wp-content/uploads/2021/01/DiskList-1-1024x186.png)](https://sherifalghali.com/wp-content/uploads/2021/01/DiskList-1.png)
+[![](https://sherifalghalistaticsite.blob.core.windows.net/images/DiskList-1.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/DiskList-1.png)
 
 Make note of the disk size and disk path. The disk size should correspond with the data disk you would like to migrate to your new VM.
 
-**Step 2. Create an Image from the VM Disk**
+## Step 2. Create an Image from the VM Disk
 
 To create a disk image you must run the following command:
 
@@ -44,9 +44,9 @@ For example - nfs://127.0.0.1/BronzeTier_StorageContainer01/.acropolis/vmdisk/be
 
 The output of the command should appear as shown below.
 
-[![](https://sherifalghali.com/wp-content/uploads/2021/01/ImageCreate-1-1024x79.png)](https://sherifalghali.com/wp-content/uploads/2021/01/ImageCreate-1.png)
+[![](https://sherifalghalistaticsite.blob.core.windows.net/images/ImageCreate-1.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/ImageCreate-1.png)
 
-**Step 3. Attach the disk to the new VM.**
+## Step 3. Attach the disk to the new VM.
 
 Attaching the disk to the new VM can be done from Prism Element on the same cluster.
 
@@ -54,12 +54,12 @@ Attaching the disk to the new VM can be done from Prism Element on the same clus
 
 2\. From the Update screen select +Add New Disk
 
-[![](https://sherifalghali.com/wp-content/uploads/2021/01/Update-AddDisk-1.jpg)](https://sherifalghali.com/wp-content/uploads/2021/01/Update-AddDisk-1.jpg)
+[![](https://sherifalghalistaticsite.blob.core.windows.net/images/Update-AddDisk-1.jpg)](https://sherifalghalistaticsite.blob.core.windows.net/images/Update-AddDisk-1.jpg)
 
 3\. In the Add Disk menu, select ‘Clone from Image Service’ from the Operation drop down menu.
 
 4\. In the Image menu, select the image you created in Step 2 and click Add.
 
-[![](https://sherifalghali.com/wp-content/uploads/2021/01/AddDisk-ImageClone-1.jpg)](https://sherifalghali.com/wp-content/uploads/2021/01/AddDisk-ImageClone-1.jpg)
+[![](https://sherifalghalistaticsite.blob.core.windows.net/images/AddDisk-ImageClone-1.jpg)](https://sherifalghalistaticsite.blob.core.windows.net/images/AddDisk-ImageClone-1.jpg)
 
 Once this is completed you can log into your VM and initialize the disk in the operating system.

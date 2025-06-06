@@ -11,7 +11,7 @@ tags:
 
 <figure>
 
-![](https://sherifalghali.com/myblog/wp-content/uploads/2020/10/caspar-camille-rubin-oI6zrBj3nKw-unsplash-1024x683.jpg)
+![](https://sherifalghalistaticsite.blob.core.windows.net/images/caspar-camille-rubin-oI6zrBj3nKw-unsplash-1024x683.jpg)
 
 <figcaption>
 

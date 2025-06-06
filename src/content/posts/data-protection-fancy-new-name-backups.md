@@ -12,7 +12,7 @@ tags:
 
 _This is a article that I originally wrote for my job. I am reposting it here with a few changes._
 
-When I ![Image result for data protection](https://cdn.ceotodaymagazine.com/CEO-Today/wp-content/uploads/2018/08/In-2018-Data-Protection-Has-Never-Been-More-Important-for-a-Business.jpg)first saw the words Data Protection, I thought, "ugh, here is another new way to do backups that I have to keep up with." The more I read about it, the more I understood that data protection and backups are like squares and rectangles. All data protection includes backups, but not all backups are data protection.
+When I ![Image result for data protection](https://sherifalghalistaticsite.blob.core.windows.net/images/In-2018-Data-Protection-Has-Never-Been-More-Important-for-a-Business.jpg)first saw the words Data Protection, I thought, "ugh, here is another new way to do backups that I have to keep up with." The more I read about it, the more I understood that data protection and backups are like squares and rectangles. All data protection includes backups, but not all backups are data protection.
 
 **The Problem with Backups**
 

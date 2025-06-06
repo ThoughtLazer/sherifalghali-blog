@@ -8,7 +8,7 @@ tags:
   - "azure"
   - "key-vault"
   - "security"
-featuredImage: "/images/KeyVault1.png"
+featuredImage: "https://sherifalghalistaticsite.blob.core.windows.net/images/KeyVault1.png"
 excerpt: "Learn how to create an Azure Key Vault to securely store secrets and passphrases for your Azure infrastructure."
 ---
 
@@ -22,25 +22,25 @@ In my earlier post, I demonstrated how to [back up my Windows 11 PC's files usin
 
 ### Step 1: Create the Azure Key Vault
 
-[![Azure Key Vault Creation Screen](/images/KeyVault1.png)](/images/KeyVault1.png)
+[![Azure Key Vault Creation Screen](https://sherifalghalistaticsite.blob.core.windows.net/images/KeyVault1.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/KeyVault1.png)
 
 To create a key vault, you must log in to the Azure portal and search for "key vault". Once done, you will see the above screen. Click "Create Key Vault" to continue.
 
-[![Azure Key Vault Configuration](/images/KeyVault2.png)](/images/KeyVault2.png)
+[![Azure Key Vault Configuration](https://sherifalghalistaticsite.blob.core.windows.net/images/KeyVault2.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/KeyVault2.png)
 
 In the above screen, you are asked to choose a resource group or create one. Again, in this case, I chose to create a new resource group. Then you are asked to create a unique key vault name and choose a region, and pricing tier. I chose the East US region and the standard pricing tier. [There is no need to use the premium tier in this case](https://learn.microsoft.com/en-us/azure/key-vault/general/overview). Once your choices are made, click "Review + Create" to create the key vault.
 
 ### Step 2: Add Secret to Vault
 
-[![Azure Key Vault Secrets Menu](/images/KeyVaultAlt.png)](/images/KeyVaultAlt.png)
+[![Azure Key Vault Secrets Menu](https://sherifalghalistaticsite.blob.core.windows.net/images/KeyVaultAlt.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/KeyVaultAlt.png)
 
 Once the key vault has been deployed, click "Secrets" from the menu on the left side of the screen.
 
-[![Adding Secret to Key Vault](/images/KeyVault4.png)](/images/KeyVault4.png)
+[![Adding Secret to Key Vault](https://sherifalghalistaticsite.blob.core.windows.net/images/KeyVault4.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/KeyVault4.png)
 
 Now you can add the recovery services vault secret (or any secret for that matter) to the Key Vault. Be sure to label it something that makes sense and click "Create"
 
-[![Key Vault Secret Created](/images/KeyVault5.png)](/images/KeyVault5.png)
+[![Key Vault Secret Created](https://sherifalghalistaticsite.blob.core.windows.net/images/KeyVault5.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/KeyVault5.png)
 
 Finally, you should be able to see your secret in the recovery services vault.
 

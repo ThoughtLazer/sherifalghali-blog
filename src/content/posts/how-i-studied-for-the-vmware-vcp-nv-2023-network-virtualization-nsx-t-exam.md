@@ -10,11 +10,11 @@ tags:
   - "nsx-t"
   - "vcp-nv-2023"
   - "vmware"
-featuredImage: "/images/VCP-NV-2023-color.jpg"
+featuredImage: "https://sherifalghalistaticsite.blob.core.windows.net/images/VCP-NV-2023-color.jpg"
 excerpt: "My study approach and resources for passing the VMware VCP-NV 2023 Network Virtualization NSX-T certification exam."
 ---
 
-[![VMware VCP-NV 2023 Badge](/images/VCP-NV-2023-color.jpg)](/images/VCP-NV-2023-color.jpg)
+[![VMware VCP-NV 2023 Badge](https://sherifalghalistaticsite.blob.core.windows.net/images/VCP-NV-2023-color.jpg)](https://sherifalghalistaticsite.blob.core.windows.net/images/VCP-NV-2023-color.jpg)
 
 I recently took the VCP-NV 2023 exam, also referred to as 2V0-41.20. The platform has been completely rebuilt since I took the VCP6-NV exam in 2018. I want to share some of the resources I used and hopefully help someone else to take and pass the exam.
 

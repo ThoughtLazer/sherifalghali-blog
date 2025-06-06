@@ -24,7 +24,7 @@ This was a random issue. Your Azure Migrate project has access to the free asses
 
 <figure>
 
-[![](https://sherifalghali.com/wp-content/uploads/2022/12/VMwareMigrate23.png)](https://sherifalghali.com/wp-content/uploads/2022/12/VMwareMigrate23.png)
+[![](https://sherifalghalistaticsite.blob.core.windows.net/images/VMwareMigrate23.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/VMwareMigrate23.png)
 
 <figcaption>
 
@@ -40,7 +40,7 @@ But the first interaction of my project would not allow me to add that tool. I s
 
 This issue is specific to using the PowerShell version instead of the virtual appliance. This was a problem for me because I had both the x86 and x64 versions of VC++ Redist 2019 installed on my Server VM as shown below.
 
-[![](https://sherifalghali.com/wp-content/uploads/2022/12/VMwareMigrate17-1024x549.png)](https://sherifalghali.com/wp-content/uploads/2022/12/VMwareMigrate17.png)
+[![](https://sherifalghalistaticsite.blob.core.windows.net/images/VMwareMigrate17-1024x549.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/VMwareMigrate17.png)
 
 I searched for the problem on the internet and found [this](https://learn.microsoft.com/en-us/answers/questions/458629/error-with-azure-migrate-appliance.html) post in Microsoft's forum. The advice given was to uninstall both versions, but in my case, that just caused another issue. The solution that worked best for me was to only uninstall the x86 version. Once done, the installation was completed successfully.
 
@@ -48,7 +48,7 @@ I searched for the problem on the internet and found [this](https://learn.micros
 
 I worked my way through all the other issues and then ran into this one.
 
-[![](https://sherifalghali.com/wp-content/uploads/2022/12/VMwareMigrate20-1024x193.png)](https://sherifalghali.com/wp-content/uploads/2022/12/VMwareMigrate20.png)
+[![](https://sherifalghalistaticsite.blob.core.windows.net/images/VMwareMigrate20-1024x193.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/VMwareMigrate20.png)
 
 I had enough cores available in the normal compute SKUs, so this one confused me a bit. The issue, in this case, is that I did an assessment, and used the assessment settings to determine the compute SKU I was going to use but did not properly modify the settings in my assessment. Once I removed reserved instances from my assessment and recalculated the assessment, I got a normal compute SKU and was able to complete my migration successfully.
 
