@@ -9,7 +9,7 @@ tags:
   - "guyana"
 ---
 
-[![](https://sherifalghali.com/wp-content/uploads/2021/06/network-4776914_640.jpg)](https://sherifalghali.com/wp-content/uploads/2021/06/network-4776914_640.jpg)
+[![](https://sherifalghalistaticsite.blob.core.windows.net/images/network-4776914_640.jpg)](https://sherifalghalistaticsite.blob.core.windows.net/images/network-4776914_640.jpg)
 
 Digital Transformation is a term that has been used frequently in IT discussions
 

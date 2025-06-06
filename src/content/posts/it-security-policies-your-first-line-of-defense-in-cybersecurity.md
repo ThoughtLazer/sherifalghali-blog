@@ -8,7 +8,7 @@ tags:
   - "it"
   - "policies"
   - "security"
-coverImage: "pxfuel.com_-scaled-e1589900253796.jpg"
+coverImage: "https://sherifalghalistaticsite.blob.core.windows.net/images/pxfuel.com_-scaled-e1589900253796.jpg"
 ---
 
 _This is a article that I originally wrote for my job. I am reposting it here with a few changes._

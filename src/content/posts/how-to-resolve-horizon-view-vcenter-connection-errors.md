@@ -16,7 +16,7 @@ _Provisioning error occurred for Machine XXX: Refit operation rebalance failed_
 
 _vCenter at address <vCenter Address> has been temporarily disabled (this error would typically followed by another notification that the same vCenter had been enabled)_
 
-[![](https://sherifalghali.com/wp-content/uploads/2021/01/ViewError-1024x404.png)](https://sherifalghali.com/wp-content/uploads/2021/01/ViewError.png)
+[![](https://sherifalghalistaticsite.blob.core.windows.net/images/ViewError.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/ViewError.png)
 
 I was able to resolve the issue by following VMware [KB 1030996](https://kb.vmware.com/s/article/1030996). I the case of this customer there was only one working production pool. To test that there was an issue with the pool in use, I created a new temporary pool. I then tried recompose actions and looked for errors in the event log. There were none.
 
