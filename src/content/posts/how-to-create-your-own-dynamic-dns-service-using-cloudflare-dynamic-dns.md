@@ -99,7 +99,7 @@ To use this script, replace the example.com variable with your own values.
 
 Save the script to a file (e.g. cloudflare-ddns.sh) and make it executable with
 
-```
+```bash
 chmod +x cloudflare-ddns.sh.
 ```
 
@@ -107,7 +107,7 @@ Also, the script reads the Cloudflare API key from a file named cloudflare\_auth
 
 Finally, set up a cron job to run the script periodically (e.g., every 10 minutes) to ensure that your DNS records are always up to date. Here’s an example cron job:
 
-```
+```bash
 */10 * * * * /path/to/cloudflare-ddns.sh > /dev/null 2>&1
 ```
 
