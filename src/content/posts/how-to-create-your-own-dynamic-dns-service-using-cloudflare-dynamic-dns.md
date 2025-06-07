@@ -70,23 +70,28 @@ echo "Current IP is $current_ip"
 
 # Loop through the DNS records and update if necessary
 for dnsrecord in "${dnsrecords[@]}"; do
-    cloudflare_zone_id=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones?name=$zone&status=active" \
+    cloudflare_zone_id=$(curl -s -X GET \
+      "https://api.cloudflare.com/client/v4/zones?name=$zone&status=active" \
       -H "Authorization: Bearer $cloudflare_auth_key" \
       -H "Content-Type: application/json" | jq -r '.result[0].id')
 
-    cloudflare_dnsrecord=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/$cloudflare_zone_id/dns_records?type=A&name=$dnsrecord" \
+    cloudflare_dnsrecord=$(curl -s -X GET \
+      "https://api.cloudflare.com/client/v4/zones/$cloudflare_zone_id/dns_records?type=A&name=$dnsrecord" \
       -H "Authorization: Bearer $cloudflare_auth_key" \
       -H "Content-Type: application/json")
 
     cloudflare_dnsrecord_ip=$(echo $cloudflare_dnsrecord | jq -r '.result[0].content')
     cloudflare_dnsrecord_proxied=$(echo $cloudflare_dnsrecord | jq -r '.result[0].proxied')
 
-    if [[ "$current_ip" == "$cloudflare_dnsrecord_ip" ]] && { [[ "$use_proxy" == true ]] && [[ "$cloudflare_dnsrecord_proxied" == true ]] || [[ "$use_proxy" == false ]] && [[ "$cloudflare_dnsrecord_proxied" == false ]]; }; then
+    if [[ "$current_ip" == "$cloudflare_dnsrecord_ip" ]] && \
+       { [[ "$use_proxy" == true ]] && [[ "$cloudflare_dnsrecord_proxied" == true ]] || \
+         [[ "$use_proxy" == false ]] && [[ "$cloudflare_dnsrecord_proxied" == false ]]; }; then
         echo "$dnsrecord DNS record is up to date"
     else
         cloudflare_dnsrecord_id=$(echo $cloudflare_dnsrecord | jq -r '.result[0].id')
         # Update the record
-        update_response=$(curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/$cloudflare_zone_id/dns_records/$cloudflare_dnsrecord_id" \
+        update_response=$(curl -s -X PUT \
+          "https://api.cloudflare.com/client/v4/zones/$cloudflare_zone_id/dns_records/$cloudflare_dnsrecord_id" \
           -H "Authorization: Bearer $cloudflare_auth_key" \
           -H "Content-Type: application/json" \
           --data "{\"type\":\"A\",\"name\":\"$dnsrecord\",\"content\":\"$current_ip\",\"ttl\":1,\"proxied\":$use_proxy}")
