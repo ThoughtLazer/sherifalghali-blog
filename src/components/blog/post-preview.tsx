@@ -7,7 +7,10 @@ interface PostPreviewProps {
 }
 
 export function PostPreview({ post }: PostPreviewProps) {
-  const formattedDate = format(new Date(post.date), "MMMM d, yyyy")
+  const postDate = new Date(post.date)
+  const formattedDate = isNaN(postDate.getTime()) 
+    ? "Invalid Date" 
+    : format(postDate, "MMMM d, yyyy")
 
   return (
     <div className="p-6 bg-gray-50 rounded-lg border border-gray-200 hover:shadow-md hover:border-blue-200 transition-all duration-200">

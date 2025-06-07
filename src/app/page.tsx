@@ -11,11 +11,11 @@ export default function Home() {
         {/* Hero Section */}
         <div className="text-center py-12">
           <h1 className="text-4xl font-bold mb-4 text-gray-900">
-            Welcome to My Tech Blog
+            Knowledge. Experience. Growth.
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             Exploring IT infrastructure, Azure cloud technologies, and sharing insights 
-            from my journey as a certified technology professional.
+            from my journey as a technology professional.
           </p>
         </div>
 
@@ -34,9 +34,8 @@ export default function Home() {
           </h3>
           <p className="text-gray-600 max-w-4xl mx-auto">
             This is where I share my experiences with cloud technologies, infrastructure design, 
-            and the latest trends in IT. Whether you're looking to learn about Azure, 
-            optimize your infrastructure, or explore new technologies, you'll find 
-            practical insights and real-world experiences here.
+            and training. My goal is to provide valuable insights and resources for fellow
+            IT professionals and anyone interested in the world of technology.
           </p>
         </div>
       </div>

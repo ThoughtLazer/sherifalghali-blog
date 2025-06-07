@@ -62,7 +62,7 @@ The next screen is where you will choose the deployment type. The choices are be
 
 The next screen will allow you to add new Azure credentials or use an existing one. If you choose to add new credentials, which I have chosen to do here, you will likely see the error message displayed below. Veeam uses Azure PowerShell to connect to Azure and the wizard will prompt you to install Azure PowerShell. This is an easy process because the link given will help you install Azure PowerShell in a few clicks.
 
-## Note
+### Note
 
 The language in the screen below is a bit imprecise. "Create a new account" does not actually create a new account. It simply configures existing Azure credentials and saves them to Veeam.
 
@@ -76,7 +76,7 @@ With the installation finished you are now prompted to enter your Azure credenti
 
 The wizard will ask you to add a VM to be restored. I have chosen to restore from a backup as you see below.
 
-## Note
+### Note
 
 Your VM should have RDP and DHCP enabled. If not, you will not be able to connect to the machine once it is restored.
 
@@ -96,7 +96,7 @@ Next, you're given the opportunity to place the VM in an existing resource group
 
 Now, you're able to choose the network and network security group.
 
-## Note
+### Note
 
 I chose to assign a public IP for testing purposes. But normally, you would have either an express route or a VPN from on-prem.
 

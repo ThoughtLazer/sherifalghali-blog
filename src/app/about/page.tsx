@@ -18,8 +18,12 @@ export default function About() {
         <div className="flex flex-col md:flex-row gap-8 items-start">
           {/* Profile Image */}
           <div className="flex-shrink-0">
-            <div className="w-72 h-72 bg-gray-200 rounded-lg flex items-center justify-center">
-              <span className="text-gray-500">Professional Photo</span>
+            <div className="w-72 h-72 rounded-lg overflow-hidden">
+              <img
+                src="https://sherifalghalistaticsite.blob.core.windows.net/images/20220210_170751740_iOS 1.jpg"
+                alt="Sherif Alghali - Professional Photo"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 
@@ -27,13 +31,20 @@ export default function About() {
           <div className="flex-1 space-y-6">
             <div>
               <h2 className="text-2xl font-bold mb-4 text-gray-900">
-                Professional Background
+                About Me
               </h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                As a Microsoft Certified Trainer (MCT), I am deeply passionate about learning and sharing 
+                knowledge with others. My journey in technology is driven by curiosity and the joy of 
+                helping fellow professionals grow their skills and advance their careers. I believe that 
+                the best way to truly master something is to teach it, which is why I'm committed to 
+                creating content, training materials, and resources that make complex technical concepts 
+                accessible to everyone.
+              </p>
               <p className="text-gray-600 leading-relaxed">
-                I am an experienced IT professional specializing in infrastructure design, 
-                cloud technologies, and Azure solutions. With a passion for technology and 
-                continuous learning, I've dedicated my career to helping organizations 
-                modernize their IT infrastructure and leverage cloud technologies effectively.
+                When I'm not immersed in the world of cloud technologies and IT infrastructure, you'll 
+                find me traveling to new destinations, getting lost in a good book, or expressing my 
+                creativity through writing.
               </p>
             </div>
 
@@ -46,7 +57,7 @@ export default function About() {
                 <p className="text-gray-600">• IT Infrastructure Design & Implementation</p>
                 <p className="text-gray-600">• Virtualization Technologies (VMware, Hyper-V)</p>
                 <p className="text-gray-600">• Cloud Migration & Hybrid Solutions</p>
-                <p className="text-gray-600">• DevOps & Automation</p>
+                <p className="text-gray-600">• M365 Tenant Migrations</p>
                 <p className="text-gray-600">• Network Security & Compliance</p>
               </div>
             </div>
@@ -55,10 +66,32 @@ export default function About() {
               <h3 className="text-lg font-semibold mb-3 text-gray-900">
                 Certifications
               </h3>
-              <div className="space-y-2">
-                <p className="text-gray-600">• Microsoft Certified: Azure Administrator Associate (AZ-104)</p>
-                <p className="text-gray-600">• VMware Certified Professional - Network Virtualization (VCP-NV)</p>
-                <p className="text-gray-600">• Various other industry certifications</p>
+              <div className="space-y-3">
+                <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                  <h4 className="font-semibold text-blue-900 mb-2">Microsoft Expert Level Certifications</h4>
+                  <div className="space-y-2 text-sm">
+                    <p className="text-gray-700">• <strong>Microsoft 365 Certified: Administrator Expert</strong></p>
+                    <p className="text-gray-700">• <strong>Azure Solutions Architect Expert</strong></p>
+                    <p className="text-gray-700">• <strong>Cybersecurity Architect Expert</strong></p>
+                  </div>
+                </div>
+                
+                <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+                  <h4 className="font-semibold text-green-900 mb-2">Microsoft Associate Level Certifications</h4>
+                  <div className="space-y-2 text-sm">
+                    <p className="text-gray-700">• <strong>Azure Network Engineer Associate</strong></p>
+                    <p className="text-gray-700">• <strong>Azure Security Engineer Associate</strong></p>
+                    <p className="text-gray-700">• <strong>Azure Administrator Associate</strong></p>
+                  </div>
+                </div>
+                
+                <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                  <h4 className="font-semibold text-purple-900 mb-2">Other Professional Certifications</h4>
+                  <div className="space-y-2 text-sm">
+                    <p className="text-gray-700">• <strong>Microsoft Certified Trainer (MCT)</strong></p>
+                    <p className="text-gray-700">• <strong>VMware Certified Professional - Network Virtualization (VCP-NV)</strong></p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -68,7 +101,7 @@ export default function About() {
               </h3>
               <div className="flex gap-4">
                 <a 
-                  href="https://linkedin.com/in/sherifalghali"
+                  href="https://www.linkedin.com/in/salghali/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:text-blue-800 transition-colors"
@@ -76,7 +109,7 @@ export default function About() {
                   LinkedIn
                 </a>
                 <a 
-                  href="https://bsky.app/profile/sherifalghali.bsky.social" 
+                  href="https://bsky.app/profile/thoughtlazer.bsky.social" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:text-blue-800 transition-colors"
@@ -84,7 +117,7 @@ export default function About() {
                   BlueSky
                 </a>
                 <a 
-                  href="https://github.com/sherifalghali" 
+                  href="https://github.com/ThoughtLazer" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:text-blue-800 transition-colors"
@@ -92,7 +125,7 @@ export default function About() {
                   GitHub
                 </a>
                 <a 
-                  href="https://learn.microsoft.com/en-us/users/sherifalghali/" 
+                  href="https://learn.microsoft.com/en-us/users/sherifalghali-8310/transcript/d5l8kuy1yxl0gk5?tab=credentials-tab" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:text-blue-800 transition-colors"
