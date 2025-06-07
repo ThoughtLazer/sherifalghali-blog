@@ -12,7 +12,7 @@ tags:
   - "vsphere"
 ---
 
-Early last year I ran into an issue where we needed to move virtual machines from ESXi 5.5 to Azure. Although the [support matrix](https://learn.microsoft.com/en-us/azure/migrate/migrate-support-matrix-vmware-migration) said that both vSphere 5.5 and Windows 2003 were supported by the migration tool, we could successfully migrate the VM using the migration tool as I demonstrated in an [earlier post](https://sherifalghali.com/2022/12/09/common-issues-when-migrating-vms-from-vmware-vsphere-on-prem-to-azure/).
+Early last year I ran into an issue where we needed to move virtual machines from ESXi 5.5 to Azure. Although the [support matrix](https://learn.microsoft.com/en-us/azure/migrate/migrate-support-matrix-vmware-migration) said that both vSphere 5.5 and Windows 2003 were supported by the migration tool, we could not successfully migrate the VM using the migration tool as I demonstrated in an [earlier post](/blog/posts/common-issues-when-migrating-vms-from-vmware-vsphere-on-prem-to-azure).
 
 What we ended up doing instead was using Veeam to migrate the VM to Azure. I had heard of this from a Veeam rep at a conference a few years prior, but until that point, I never had a use case for that information. Below I will demonstrate how to migrate a VM from vSphere 7 to Microsoft Azure using the Veeam restore feature. In this example, I'm using a Server 2022 VM, but it will work similarly for any Windows VM.
 
