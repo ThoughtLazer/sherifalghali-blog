@@ -5,7 +5,7 @@ import rehypeHighlight from 'rehype-highlight'
 import { getAllPosts, getPostBySlug } from '@/lib/posts'
 import { format } from 'date-fns'
 import { Layout } from '@/components/layout/layout'
-import 'highlight.js/styles/github-dark.css'
+import 'highlight.js/styles/vs.css'
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>
@@ -77,7 +77,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <div className="flex items-center gap-1">
                 <MdCalendarToday />
                 <span className="text-sm">
-                  {format(new Date(post.date), 'MMMM d, yyyy')}
+                  {(() => {
+                    const postDate = new Date(post.date)
+                    return isNaN(postDate.getTime()) 
+                      ? "Invalid Date" 
+                      : format(postDate, 'MMMM d, yyyy')
+                  })()}
                 </span>
               </div>
               

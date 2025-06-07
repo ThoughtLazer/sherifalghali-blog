@@ -30,22 +30,33 @@ export function getPostBySlug(slug: string): BlogPost | null {
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const { data, content } = matter(fileContents)
     
-    // Extract year from date
+    // Validate and extract year from date
     const postDate = new Date(data.date)
+    if (isNaN(postDate.getTime())) {
+      console.warn(`Invalid date in post ${slug}: ${data.date}`)
+      return null
+    }
     const year = postDate.getFullYear().toString()
+
+    // Validate required fields
+    if (!data.title) {
+      console.warn(`Missing title in post ${slug}`)
+      return null
+    }
 
     return {
       slug,
-      title: data.title || slug,
+      title: data.title,
       date: data.date || '',
       excerpt: data.excerpt || '',
       content,
       featuredImage: data.featuredImage || data.featured_image,
-      tags: data.tags || [],
+      tags: Array.isArray(data.tags) ? data.tags : [],
       category: data.category || 'Tech',
       year,
     }
   } catch (error) {
+    console.error(`Error reading post ${slug}:`, error)
     return null
   }
 }
@@ -55,7 +66,7 @@ export function getAllPosts(): BlogPost[] {
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
     .filter((post): post is BlogPost => post !== null)
-    .sort((a, b) => (a.date > b.date ? -1 : 1))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   
   return posts
 }

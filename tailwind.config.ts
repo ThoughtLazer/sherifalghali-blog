@@ -18,7 +18,7 @@ export default {
           300: '#91cffc',
           400: '#5db3f8',
           500: '#3795f2',
-          600: '#0a66c2', // LinkedIn blue
+          600: '#0a66c2',
           700: '#0553a1',
           800: '#0e4b82',
           900: '#0f3f6b',
@@ -28,6 +28,5 @@ export default {
   },
   plugins: [
     require('@tailwindcss/typography'),
-    require('@tailwindcss/line-clamp'),
   ],
 } satisfies Config;

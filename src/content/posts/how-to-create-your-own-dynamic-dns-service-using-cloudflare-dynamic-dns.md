@@ -6,13 +6,13 @@ categories:
   - "tech"
 tags: 
   - "cloudflare"
-featuredImage: "https://sherifalghalistaticsite.blob.core.windows.net/images/DALL·E-2024-02-28-05.47.47-Design-a-simple-and-clean-featured-image-for-a-post-about-creating-a-Dynamic-DNS-service-using-Cloudflare.-The-image-should-be-based-on-simple-geometr.webp"
+featuredImage: "https://sherifalghalistaticsite.blob.core.windows.net/images/CloudFlareDDNSPicture.webp"
 excerpt: "Learn how to set up a Dynamic DNS service with Cloudflare for free to automatically update your DNS records when your IP address changes."
 ---
 
 Learn how to set up a Dynamic DNS service with Cloudflare for free. Dynamic DNS allows you to update your DNS records automatically whenever your IP address changes, and Cloudflare makes it easy with its API. To start, create an API token with permission to edit DNS records and use a simple Bash script to update your DNS record with Cloudflare. The script is designed to run on your source machine and can be used to provide DDNS service from anywhere. With Cloudflare Dynamic DNS, you can use their CDN and security features to improve website performance and security.
 
-![Dynamic DNS with Cloudflare](https://sherifalghalistaticsite.blob.core.windows.net/images/DALL·E-2024-02-28-05.47.47-Design-a-simple-and-clean-featured-image-for-a-post-about-creating-a-Dynamic-DNS-service-using-Cloudflare.-The-image-should-be-based-on-simple-geometr.webp)
+![Dynamic DNS with Cloudflare](https://sherifalghalistaticsite.blob.core.windows.net/images/CloudFlareDDNSPicture.webp)
 
 [](https://www.sherifalghali.com/2023/02/22/how-to-create-your-own-dynamic-dns-service-using-cloudflare-dynamic-dns/)
 
@@ -40,7 +40,7 @@ To get started, you must sign up for a Cloudflare account and create a new API t
 
 To simplify things, I modified a [simple Bash script](https://gist.github.com/Tras2/cba88201b17d765ec065ccbedfb16d9a) that I found on GitHub that updates my DNS records with Cloudflare. Here’s the script:
 
-```
+```bash
 #!/bin/bash
 
 # A bash script to update Cloudflare DNS A records with the external IP of the source machine

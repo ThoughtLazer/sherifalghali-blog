@@ -41,7 +41,7 @@ export default function Contact() {
             </h3>
             <div className="flex justify-center gap-6">
               <a
-                href="https://linkedin.com/in/sherifalghali"
+                href="https://www.linkedin.com/in/salghali/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:text-blue-800 transition-colors"
@@ -49,7 +49,7 @@ export default function Contact() {
                 LinkedIn
               </a>
               <a
-                href="https://bsky.app/profile/sherifalghali.bsky.social"
+                href="https://bsky.app/profile/thoughtlazer.bsky.social"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:text-blue-800 transition-colors"
@@ -57,7 +57,7 @@ export default function Contact() {
                 BlueSky
               </a>
               <a
-                href="https://github.com/sherifalghali"
+                href="https://github.com/ThoughtLazer"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 hover:text-blue-800 transition-colors"

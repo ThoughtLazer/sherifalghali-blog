@@ -7,8 +7,10 @@ interface SidebarArchiveProps {
 }
 
 export function SidebarArchive({ posts, currentYear }: SidebarArchiveProps) {
-  // Get unique years from posts
-  const years = [...new Set(posts.map((post) => parseInt(post.year)))]
+  // Get unique years from posts, filtering out invalid years
+  const years = [...new Set(posts
+    .map((post) => parseInt(post.year))
+    .filter((year) => !isNaN(year)))]
     .sort((a, b) => b - a)
 
   return (

@@ -10,7 +10,7 @@ export function Footer() {
           </p>
           <div className="flex gap-4">
             <a 
-              href="https://linkedin.com/in/sherifalghali" 
+              href="https://www.linkedin.com/in/salghali/" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-blue-600 text-sm transition-colors"
@@ -18,7 +18,7 @@ export function Footer() {
               LinkedIn
             </a>
             <a 
-              href="https://github.com/sherifalghali" 
+              href="https://github.com/ThoughtLazer" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-blue-600 text-sm transition-colors"
