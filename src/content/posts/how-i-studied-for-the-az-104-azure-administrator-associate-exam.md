@@ -2,12 +2,12 @@
 title: "How I studied for the AZ-104 Azure Administrator Associate Exam"
 date: "2022-12-14"
 excerpt: "My journey to passing the AZ-104 Azure Administrator Associate certification exam, including the key resources and strategies that helped me succeed."
-featuredImage: "https://sherifalghalistaticsite.blob.core.windows.net/images/azure-administrator-associate.png"
+featuredImage: "https://sherifalghalistaticsite.blob.core.windows.net/images/azure-administrator-associate-600x600.png"
 category: "Tech"
 tags: ["azure", "certification", "cloud"]
 ---
 
-[![Azure Administrator Associate Badge](https://sherifalghalistaticsite.blob.core.windows.net/images/azure-administrator-associate.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/azure-administrator-associate.png)
+[![Azure Administrator Associate Badge](https://sherifalghalistaticsite.blob.core.windows.net/images/azure-administrator-associate-600x600.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/azure-administrator-associate-600x600.png)
 
 When I took the Azure AZ-104 exam in August, I was able to pass confidently because I used the following resources. I hope that if you're studying for the exam, you find the same resources helpful.
 
