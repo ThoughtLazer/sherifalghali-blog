@@ -52,9 +52,16 @@ To simplify things, I modified a [simple Bash script](https://gist.github.com/Tr
 zone="example.com"
 
 # DNS records to be updated
-dnsrecords=(vpn.example.com vcenter.example.com desktop.example.com www.example.com example.com)
+dnsrecords=(
+  vpn.example.com 
+  vcenter.example.com 
+  desktop.example.com 
+  www.example.com 
+  example.com
+)
 
-# Flag for Cloudflare proxy status (true or false, lower case in script logic, correctly formatted in JSON payload)
+# Flag for Cloudflare proxy status 
+# (true or false, lower case in script logic, correctly formatted in JSON payload)
 use_proxy=true
 
 # Cloudflare authentication details file path
