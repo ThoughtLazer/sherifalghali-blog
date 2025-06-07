@@ -2,12 +2,12 @@
 title: "How I studied for the AZ-700 (Microsoft Certified: Azure Network Engineer Associate) exam"
 date: "2025-06-06"
 excerpt: "My journey to passing the AZ-700 Azure Network Engineer Associate certification exam, including the key resources and strategies that helped me succeed."
-featuredImage: "https://sherifalghalistaticsite.blob.core.windows.net/images/azure-network-engineer-associate-600x600.png"
+featuredImage: "https://sherifalghalistaticsite.blob.core.windows.net/images/azure-network-engineer-associate.png"
 category: "Tech"
 tags: ["azure", "certification", "networking", "cloud"]
 ---
 
-[![Azure Network Engineer Associate Badge](https://sherifalghalistaticsite.blob.core.windows.net/images/azure-network-engineer-associate-600x600.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/azure-network-engineer-associate-600x600.png)
+[![Azure Network Engineer Associate Badge](https://sherifalghalistaticsite.blob.core.windows.net/images/azure-network-engineer-associate.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/azure-network-engineer-associate.png)
 
 I originally passed this exam in January of 2023, but I had to retake the AZ-700 Azure Network Engineer Associate certification exam again in April 2025 because I had unfortunately let my previous certification expire. When I decided to pursue it again, I knew I was in for a challenging but rewarding journey. Having already passed the AZ-104 Azure Administrator Associate exam, I had a solid foundation in Azure fundamentals, but networking in the cloud presented its own unique set of challenges and concepts. Here are the resources and strategies that helped me successfully pass the exam.
 

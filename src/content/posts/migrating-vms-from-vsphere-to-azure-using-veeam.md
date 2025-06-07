@@ -46,7 +46,7 @@ Then select "Restore to Public Cloud"
 
 Finally, click on "Restore to Microsoft Azure"
 
-[![](https://sherifalghalistaticsite.blob.core.windows.net/images/VeeamRestoreAzure5-1.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/VeeamRestoreAzure5-1.png)
+[![](https://sherifalghalistaticsite.blob.core.windows.net/images/VeeamRestoreAzure5.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/VeeamRestoreAzure5.png)
 
 Now that you have navigated through the menus above, you will be presented with a menu asking you to perform the initial configuration. Click "Yes".
 
@@ -100,7 +100,7 @@ Now, you're able to choose the network and network security group.
 
 I chose to assign a public IP for testing purposes. But normally, you would have either an express route or a VPN from on-prem.
 
-[![](https://sherifalghalistaticsite.blob.core.windows.net/images/VeeamRestoreAzure17a-1.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/VeeamRestoreAzure17a-1.png)
+[![](https://sherifalghalistaticsite.blob.core.windows.net/images/VeeamRestoreAzure17a.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/VeeamRestoreAzure17a.png)
 
 The last item to configure is whether or not to scan the restored VM for malware prior to recovery. I chose not to do this because my VM is a fresh install of Server 2022.
 
