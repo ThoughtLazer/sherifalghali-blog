@@ -29,7 +29,7 @@ Login to your azure portal and search for the "Recovery Services Vault". If you 
 
 From there you are taken through a wizard to create the Recovery Services Vault. Here you will need to either choose an existing resource group or create a new one. I decided to create a new one because all my resource groups contain related items that can be deleted together. Additionally, you are asked to choose a unique name for the Recovery Services Vault. Once these two things are done, you can click "Review + Create", and in a few moments, the Recovery Services Vault will be created.
 
-[![](https://sherifalghalistaticsite.blob.core.windows.net/images/Image-11-15-22-at-12.30-PM-scaled-1.jpeg)](https://sherifalghalistaticsite.blob.core.windows.net/images/Image-11-15-22-at-12.30-PM-scaled-1.jpeg)
+[![](https://sherifalghalistaticsite.blob.core.windows.net/images/CreateVault3.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/CreateVault3.png)
 
 Once your Recovery Services Vault has been created, you can click on the resource and see a menu on the left side. From that menu, you will click Backup. Then you have two choices to make: "Where is the workload running?" and "What do you want to backup?" In my setup, I chose "On-Premises" and "Files and Folders". Note that it is currently not possible to [back up the system state for Windows 11 machines](https://learn.microsoft.com/en-us/azure/backup/backup-support-matrix-mars-agent).
 
