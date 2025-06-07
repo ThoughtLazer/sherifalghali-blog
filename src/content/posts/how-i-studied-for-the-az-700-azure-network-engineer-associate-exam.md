@@ -13,7 +13,7 @@ I originally passed this exam in January of 2023, but I had to retake the AZ-700
 
 ### Microsoft Learn Learning Path
 
-The official [Microsoft Learn path for AZ-700](https://learn.microsoft.com/en-us/certifications/exams/az-700) is absolutely essential. Microsoft has done an excellent job creating comprehensive, hands-on learning modules that cover all the exam objectives. I spent significant time working through each module, taking notes, and completing the sandbox exercises. The interactive nature of these labs really helped solidify my understanding of Azure networking concepts.
+The official [Microsoft Learn path for AZ-700](https://learn.microsoft.com/en-us/training/paths/design-implement-microsoft-azure-networking-solutions-az-700/) is absolutely essential. Microsoft has done an excellent job creating comprehensive, hands-on learning modules that cover all the exam objectives. I spent significant time working through each module, taking notes, and completing the sandbox exercises. The interactive nature of these labs really helped solidify my understanding of Azure networking concepts.
 
 ### Hands-On Practice in Azure
 
