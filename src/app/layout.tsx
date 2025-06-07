@@ -13,6 +13,11 @@ export const metadata: Metadata = {
   keywords: ["Azure", "Cloud", "IT Infrastructure", "Technology", "DevOps"],
   authors: [{ name: "Sherif Alghali" }],
   creator: "Sherif Alghali",
+  icons: {
+    icon: "https://sherifalghalistaticsite.blob.core.windows.net/images/Sherif-Favicon.jpg",
+    shortcut: "https://sherifalghalistaticsite.blob.core.windows.net/images/Sherif-Favicon.jpg",
+    apple: "https://sherifalghalistaticsite.blob.core.windows.net/images/Sherif-Favicon.jpg",
+  },
 };
 
 export default function RootLayout({
