@@ -5,6 +5,7 @@ import rehypeHighlight from 'rehype-highlight'
 import { getAllPosts, getPostBySlug } from '@/lib/posts'
 import { format } from 'date-fns'
 import { Layout } from '@/components/layout/layout'
+import { ArticleTracker } from '@/components/analytics/ArticleTracker'
 import 'highlight.js/styles/vs.css'
 
 interface BlogPostPageProps {
@@ -54,6 +55,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <Layout>
+      <ArticleTracker title={post.title} category={post.category} />
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="space-y-6">
           {/* Featured Image */}
