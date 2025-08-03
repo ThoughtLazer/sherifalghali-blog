@@ -47,7 +47,7 @@ The install screen for the Azure recovery services agent should look like the on
 
 [![](https://sherifalghalistaticsite.blob.core.windows.net/images/CreateVault8A.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/CreateVault8A.png)
 
-The Installation will need .Net Framework 4.5 and Windows Powershell. You will need to install these items to proceed with the installation.
+The Installation will need .NET Framework 4.5 and Windows PowerShell. You will need to install these items to proceed with the installation.
 
 [![](https://sherifalghalistaticsite.blob.core.windows.net/images/CreateVault9-1.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/CreateVault9-1.png)
 
