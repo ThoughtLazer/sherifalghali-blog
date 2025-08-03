@@ -11,8 +11,6 @@ tags:
   - google-workspace
 ---
 
-[![M365 Migration Guide](https://sherifalghalistaticsite.blob.core.windows.net/images/MigrationGuide.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/MigrationGuide.png)
-
 Over the past year, I have been working exclusively on an integration project to migrate my client's recent acquisitions into their Microsoft 365 (M365) tenant. My team's part in the project has focused almost exclusively on collaboration products, meaning migrating email, personal file storage, departmental file shares, and a limited number of chat archives and voice services. While 95% of our migrations have been for Google Workspace and M365, we have also worked with Postfix, IMAP, Dropbox, and on-premises file shares. Additionally, our migration tool of choice has been BitTitan MigrationWiz; however, many of the non-technical tips, tricks, and lessons learned apply to all migrations, regardless of the tool used.
 
 In the 50+ migrations over the past 16 months, I have learned a lot, and I want to share some of the biggest takeaways and things I wish I had known before I got started. This blog post is structured in the same way as our migration projects: Preparation, Cutover, and Stabilize.
