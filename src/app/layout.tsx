@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -27,7 +28,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} light`} suppressHydrationWarning>
-      <body className="bg-white text-gray-900">{children}</body>
+      <body className="bg-white text-gray-900">
+        <AnalyticsProvider>
+          {children}
+        </AnalyticsProvider>
+      </body>
     </html>
   );
 }
