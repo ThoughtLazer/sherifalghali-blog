@@ -7,8 +7,6 @@ category: "Tech"
 tags: ["azure", "certification", "cloud"]
 ---
 
-[![Azure Administrator Associate Badge](https://sherifalghalistaticsite.blob.core.windows.net/images/azure-administrator-associate-600x600.png)](https://sherifalghalistaticsite.blob.core.windows.net/images/azure-administrator-associate-600x600.png)
-
 When I took the Azure AZ-104 exam in August, I was able to pass confidently because I used the following resources. I hope that if you're studying for the exam, you find the same resources helpful.
 
 ### Exam Ref AZ-104 Microsoft Azure Administrator

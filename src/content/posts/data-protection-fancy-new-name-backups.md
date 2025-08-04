@@ -10,7 +10,6 @@ tags:
   - "modern-datacenter"
 ---
 
-_This is a article that I originally wrote for my job. I am reposting it here with a few changes._
 
 When I first saw the words Data Protection, I thought, "ugh, here is another new way to do backups that I have to keep up with." The more I read about it, the more I understood that data protection and backups are like squares and rectangles. All data protection includes backups, but not all backups are data protection.
 

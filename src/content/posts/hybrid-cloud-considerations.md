@@ -10,8 +10,6 @@ tags:
   - "technology"
 ---
 
-_This is a article that I originally wrote for my job. I am reposting it here._
-
 ### The Problem
 
 The cloud continues to be a hot topic in 2019. Public cloud initiatives have been at the forefront of enterprise digital transformation for the past few years. As we discussed last month, the cloud is not a complete solution for most modern enterprises. Although the public cloud is great for its agility, scalable workloads, and reliability, many enterprise customers are hampered by the “Three C’s” of cost, connectivity, and complexity. In addition, they face pressure by other business units to be more agile, which often take matters into their own hands and create the problem of shadow IT. This becomes even more of an issue when using a multi-cloud strategy. So, what is the solution? The solution is to combine the current on-premises private cloud with the public cloud to create a hybrid cloud infrastructure.

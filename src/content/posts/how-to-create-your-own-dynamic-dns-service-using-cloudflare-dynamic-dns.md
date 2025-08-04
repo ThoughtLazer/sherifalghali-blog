@@ -11,11 +11,6 @@ excerpt: "Learn how to set up a Dynamic DNS service with Cloudflare for free to 
 ---
 
 Learn how to set up a Dynamic DNS service with Cloudflare for free. Dynamic DNS allows you to update your DNS records automatically whenever your IP address changes, and Cloudflare makes it easy with its API. To start, create an API token with permission to edit DNS records and use a simple Bash script to update your DNS record with Cloudflare. The script is designed to run on your source machine and can be used to provide DDNS service from anywhere. With Cloudflare Dynamic DNS, you can use their CDN and security features to improve website performance and security.
-
-![Dynamic DNS with Cloudflare](https://sherifalghalistaticsite.blob.core.windows.net/images/CloudFlareDDNSPicture.webp)
-
-[](https://www.sherifalghali.com/2023/02/22/how-to-create-your-own-dynamic-dns-service-using-cloudflare-dynamic-dns/)
-
 ## Some Background
 
 Dynamic DNS is used by many whose IP provider has given a dynamic IP address. While there are free services out there, it is typically a service that costs $25 a year. In this article, I will show you how to create your own script to manage dynamic DNS service using Cloudflare.

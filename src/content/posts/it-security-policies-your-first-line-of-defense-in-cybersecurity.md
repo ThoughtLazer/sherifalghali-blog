@@ -11,8 +11,6 @@ tags:
 coverImage: "https://sherifalghalistaticsite.blob.core.windows.net/images/pxfuel.com_-scaled-e1589900253796.jpg"
 ---
 
-_This is a article that I originally wrote for my job. I am reposting it here with a few changes._
-
 ## Technology Can’t do Everything
 
 You walk into the office Monday morning, attempt to login to your desktop and realize that you can’t login because you’ve been hacked or there is a ransomware note ominously dominating your screen. The first thing you may think of is to look at logs and other use the other tools of the trade to figure out how this happened.

@@ -9,20 +9,6 @@ tags:
   - "vdi"
 ---
 
-<figure>
-
-![](https://sherifalghalistaticsite.blob.core.windows.net/images/caspar-camille-rubin-oI6zrBj3nKw-unsplash.jpg)
-
-<figcaption>
-
-Photo by [Caspar Camille Rubin](https://unsplash.com/@casparrubin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/desktop-computer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-
-</figcaption>
-
-</figure>
-
-_This is a article that I originally wrote for my job. I am reposting it here with a few changes._
-
 The pandemic has brought its share of challenges. One of the greatest challenges has been how to give workers the connectivity and access necessary to do their jobs when working from home. This has been especially true for organizations that previously had few to no remote workers. In a previous article, we talked about on-prem VDI and how it has matured over the years. Desktops-as-a-Service (DaaS) is the latest stage of VDI maturity.
 
 **What is DaaS?**
