@@ -30,16 +30,49 @@ export function AnalyticsProvider({ children }: AnalyticsProviderProps) {
       
       // Track in Application Insights - use the global instance
       if (window.appInsights) {
+        const pageTitle = document.title || pathname;
+        
+        // Track as standard pageView for dashboard compatibility
         window.appInsights.trackPageView({
-          name: pathname,
-          uri: window.location.href,
+          name: pageTitle,
+          uri: window.location.href
         });
+        
+        // Also track as a custom event for better analytics
+        window.appInsights.trackEvent({
+          name: "PageView",
+          properties: {
+            title: pageTitle,
+            path: pathname,
+            url: window.location.href,
+            timestamp: new Date().toISOString(),
+            host: window.location.hostname,
+            referrer: document.referrer || "direct"
+          }
+        });
+        
         console.log('Application Insights page view tracked for:', pathname);
       } else if (appInsights) {
         // Fallback to imported instance if global one isn't available
+        const pageTitle = document.title || pathname;
+        
+        // Track as standard pageView for dashboard compatibility
         appInsights.trackPageView({
-          name: pathname,
-          uri: window.location.href,
+          name: pageTitle,
+          uri: window.location.href
+        });
+        
+        // Also track as a custom event for better analytics
+        appInsights.trackEvent({
+          name: "PageView",
+          properties: {
+            title: pageTitle,
+            path: pathname,
+            url: window.location.href,
+            timestamp: new Date().toISOString(),
+            host: window.location.hostname,
+            referrer: document.referrer || "direct"
+          }
         });
         console.log('Application Insights page view tracked using module instance for:', pathname);
       }
