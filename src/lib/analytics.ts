@@ -37,9 +37,25 @@ export const initializeAppInsights = () => {
         
         // Track initial page view with full details
         const pageName = window.location.pathname;
+        const pageTitle = document.title || pageName;
+        
+        // First track as standard pageView for dashboard compatibility
         appInsights.trackPageView({
-          name: pageName,
+          name: pageTitle, 
           uri: window.location.href
+        });
+        
+        // Also track as a custom event for better analytics
+        appInsights.trackEvent({
+          name: "PageView", 
+          properties: {
+            title: pageTitle,
+            path: pageName,
+            url: window.location.href,
+            timestamp: new Date().toISOString(),
+            host: window.location.hostname,
+            referrer: document.referrer || "direct"
+          }
         });
         
         // Make appInsights available globally for route tracking

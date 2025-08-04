@@ -1,0 +1,12 @@
+// Page Views
+pageViews
+| where timestamp > ago(7d)
+| summarize PageViewCount=count() by tostring(url), bin(timestamp, 1d)
+| order by timestamp desc, PageViewCount desc
+
+// Custom Page Views (from our custom tracking)
+pageViews
+| where timestamp > ago(7d) 
+| where customDimensions.custom_pageview == true
+| summarize PageViewCount=count() by tostring(name), tostring(customDimensions.page), bin(timestamp, 1d)
+| order by timestamp desc, PageViewCount desc
