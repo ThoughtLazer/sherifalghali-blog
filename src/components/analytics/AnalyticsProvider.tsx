@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import Script from 'next/script';
-import { initializeAppInsights, pageview, GA_TRACKING_ID } from '@/lib/analytics';
+import { initializeAppInsights, pageview, GA_TRACKING_ID, appInsights } from '@/lib/analytics';
 
 interface AnalyticsProviderProps {
   children: React.ReactNode;
@@ -11,20 +11,49 @@ interface AnalyticsProviderProps {
 
 export function AnalyticsProvider({ children }: AnalyticsProviderProps) {
   const pathname = usePathname();
+  const initializedRef = useRef(false);
+  const prevPathnameRef = useRef<string | null>(null);
 
   useEffect(() => {
-    // Initialize Application Insights only on client side
+    // Initialize Application Insights only once on client side
     if (typeof window !== 'undefined') {
+      console.log('Initializing Application Insights from AnalyticsProvider...');
       initializeAppInsights();
+      initializedRef.current = true;
     }
-  }, []);
+  }, []); // Only run once on mount
 
   useEffect(() => {
-    // Track page views for Google Analytics
-    if (typeof window !== 'undefined' && GA_TRACKING_ID) {
-      pageview(pathname);
+    // Skip initial mount since we handle it in initializeAppInsights
+    if (typeof window !== 'undefined' && prevPathnameRef.current !== null && pathname !== prevPathnameRef.current) {
+      console.log('Route changed, tracking page view:', pathname);
+      
+      // Track in Application Insights - use the global instance
+      if (window.appInsights) {
+        window.appInsights.trackPageView({
+          name: pathname,
+          uri: window.location.href,
+        });
+        console.log('Application Insights page view tracked for:', pathname);
+      } else if (appInsights) {
+        // Fallback to imported instance if global one isn't available
+        appInsights.trackPageView({
+          name: pathname,
+          uri: window.location.href,
+        });
+        console.log('Application Insights page view tracked using module instance for:', pathname);
+      }
+      
+      // Track in Google Analytics
+      if (GA_TRACKING_ID) {
+        pageview(pathname);
+        console.log('Google Analytics page view tracked for:', pathname);
+      }
     }
-  }, [pathname]);
+    
+    // Update previous pathname for future comparisons
+    prevPathnameRef.current = pathname;
+  }, [pathname]); // Run when pathname changes
 
   return (
     <>
