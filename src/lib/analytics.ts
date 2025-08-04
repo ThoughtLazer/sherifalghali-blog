@@ -9,7 +9,10 @@ export const initializeAppInsights = () => {
   if (typeof window !== 'undefined' && !appInsights) {
     const connectionString = process.env.NEXT_PUBLIC_APPINSIGHTS_CONNECTION_STRING;
     
+    console.log("Attempting to initialize Application Insights...");
+
     if (connectionString) {
+      console.log("Application Insights connection string found.");
       try {
         reactPlugin = new ReactPlugin();
         appInsights = new ApplicationInsights({
@@ -32,9 +35,19 @@ export const initializeAppInsights = () => {
         
         appInsights.loadAppInsights();
         appInsights.trackPageView();
+        console.log("Application Insights initialized and page view tracked successfully.");
       } catch (error) {
         console.error('Failed to initialize Application Insights:', error);
       }
+    } else {
+      console.warn("Application Insights connection string not found. Analytics will not be initialized.");
+    }
+  } else {
+    if (appInsights) {
+      console.log("Application Insights already initialized.");
+    }
+    if (typeof window === 'undefined') {
+      console.log("Cannot initialize Application Insights on the server.");
     }
   }
   
