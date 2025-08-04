@@ -11,12 +11,6 @@ excerpt: "Practical tips and solutions for migrating your WordPress blog from tr
 
 This was prior to reimagining my blog by turning it into a static web app and hosting it on Azure
 
-![AWS Lightsail Logo](https://sherifalghalistaticsite.blob.core.windows.net/images/LightsailLogo.png)
-
-[](https://www.sherifalghali.com/blog/tips-on-migrating-your-blog-to-aws-lightsail/)
-
-
-
 I’ve been running my blog on WordPress using Host Gator for almost ten years. While I have never had problems with my hosting provider, I have wanted to explore options to migrate to either Azure or AWS. I recently read about how AWS Lightsail would be the most affordable and simple option. I then looked for documentation to help me with the migration and ran into a lot of conflicting information. Hopefully, the issues and solutions detailed below will help others wishing to migrate their WordPress blog to AWS Lightsail.
 
 ## Getting Started

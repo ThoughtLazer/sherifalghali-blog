@@ -9,8 +9,6 @@ tags:
   - "guyana"
 ---
 
-[![](https://sherifalghalistaticsite.blob.core.windows.net/images/network-4776914.jpg)](https://sherifalghalistaticsite.blob.core.windows.net/images/network-4776914_640.jpg)
-
 Digital Transformation is a term that has been used frequently in IT discussions
 
 We live in an era where digital technologies are expanding exponentially, and digital transformation is reshaping the business landscape globally. Digital Transformation is a term that has been employed often in IT discussions during the last decade. This is especially true for Fortune 1000 companies in the developed world. However, there are still many places where this transformation has not yet taken root.
