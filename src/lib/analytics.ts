@@ -24,7 +24,7 @@ export const initializeAppInsights = () => {
                 history: window.history,
               },
             },
-            enableAutoRouteTracking: true,
+            enableAutoRouteTracking: false, // We'll handle route tracking manually
             enableCorsCorrelation: true,
             enableRequestHeaderTracking: true,
             enableResponseHeaderTracking: true,
@@ -34,8 +34,18 @@ export const initializeAppInsights = () => {
         });
         
         appInsights.loadAppInsights();
-        appInsights.trackPageView();
-        console.log("Application Insights initialized and page view tracked successfully.");
+        
+        // Track initial page view with full details
+        const pageName = window.location.pathname;
+        appInsights.trackPageView({
+          name: pageName,
+          uri: window.location.href
+        });
+        
+        // Make appInsights available globally for route tracking
+        window.appInsights = appInsights;
+        
+        console.log("Application Insights initialized and initial page view tracked for:", pageName);
       } catch (error) {
         console.error('Failed to initialize Application Insights:', error);
       }
@@ -60,6 +70,7 @@ export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID;
 declare global {
   interface Window {
     gtag: (...args: unknown[]) => void;
+    appInsights: ApplicationInsights;
   }
 }
 
@@ -97,8 +108,20 @@ export const trackArticleView = (articleTitle: string, articleCategory?: string)
   if (typeof window === 'undefined') return;
 
   // Track in Application Insights
-  if (appInsights) {
-    try {
+  try {
+    // First try to use the global instance
+    if (window.appInsights) {
+      window.appInsights.trackEvent({
+        name: 'ArticleView',
+        properties: {
+          title: articleTitle,
+          category: articleCategory,
+          timestamp: new Date().toISOString(),
+        },
+      });
+    } 
+    // Fall back to the module instance
+    else if (appInsights) {
       appInsights.trackEvent({
         name: 'ArticleView',
         properties: {
@@ -107,9 +130,11 @@ export const trackArticleView = (articleTitle: string, articleCategory?: string)
           timestamp: new Date().toISOString(),
         },
       });
-    } catch (error) {
-      console.error('Failed to track article view in Application Insights:', error);
+    } else {
+      console.warn('No Application Insights instance available for tracking article view');
     }
+  } catch (error) {
+    console.error('Failed to track article view in Application Insights:', error);
   }
 
   // Track in Google Analytics
@@ -128,8 +153,21 @@ export const trackArticleEngagement = (
   if (typeof window === 'undefined') return;
 
   // Track in Application Insights
-  if (appInsights) {
-    try {
+  try {
+    // First try to use the global instance
+    if (window.appInsights) {
+      window.appInsights.trackEvent({
+        name: 'ArticleEngagement',
+        properties: {
+          title: articleTitle,
+          engagementType,
+          value,
+          timestamp: new Date().toISOString(),
+        },
+      });
+    } 
+    // Fall back to the module instance
+    else if (appInsights) {
       appInsights.trackEvent({
         name: 'ArticleEngagement',
         properties: {
@@ -139,9 +177,11 @@ export const trackArticleEngagement = (
           timestamp: new Date().toISOString(),
         },
       });
-    } catch (error) {
-      console.error('Failed to track article engagement in Application Insights:', error);
+    } else {
+      console.warn('No Application Insights instance available for tracking article engagement');
     }
+  } catch (error) {
+    console.error('Failed to track article engagement in Application Insights:', error);
   }
 
   // Track in Google Analytics
@@ -155,15 +195,33 @@ export const trackArticleEngagement = (
 
 export const trackSearchEvent = (searchTerm: string, resultsCount: number) => {
   // Track in Application Insights
-  if (appInsights) {
-    appInsights.trackEvent({
-      name: 'SearchPerformed',
-      properties: {
-        searchTerm,
-        resultsCount,
-        timestamp: new Date().toISOString(),
-      },
-    });
+  try {
+    // First try to use the global instance
+    if (window.appInsights) {
+      window.appInsights.trackEvent({
+        name: 'SearchPerformed',
+        properties: {
+          searchTerm,
+          resultsCount,
+          timestamp: new Date().toISOString(),
+        },
+      });
+    } 
+    // Fall back to the module instance
+    else if (appInsights) {
+      appInsights.trackEvent({
+        name: 'SearchPerformed',
+        properties: {
+          searchTerm,
+          resultsCount,
+          timestamp: new Date().toISOString(),
+        },
+      });
+    } else {
+      console.warn('No Application Insights instance available for tracking search event');
+    }
+  } catch (error) {
+    console.error('Failed to track search event in Application Insights:', error);
   }
 
   // Track in Google Analytics
