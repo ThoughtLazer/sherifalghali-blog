@@ -9,7 +9,9 @@ export const initializeAppInsights = () => {
   if (typeof window !== 'undefined' && !appInsights) {
     const connectionString = process.env.NEXT_PUBLIC_APPINSIGHTS_CONNECTION_STRING;
     
-    console.log("Attempting to initialize Application Insights...");
+    console.log("Attempting to initialize Application Insights for Static Web App...");
+    console.log("Connection string exists:", !!connectionString);
+    console.log("Environment:", process.env.NODE_ENV);
 
     if (connectionString) {
       console.log("Application Insights connection string found.");
@@ -30,50 +32,59 @@ export const initializeAppInsights = () => {
             enableResponseHeaderTracking: true,
             disableFetchTracking: false,
             disableAjaxTracking: false,
+            autoTrackPageVisitTime: true,
+            enableUnhandledPromiseRejectionTracking: true,
           },
         });
         
         appInsights.loadAppInsights();
         
-        // Track initial page view with full details
-        const pageName = window.location.pathname;
-        const pageTitle = document.title || pageName;
-        
-        // First track as standard pageView for dashboard compatibility
-        appInsights.trackPageView({
-          name: pageTitle, 
-          uri: window.location.href
-        });
-        
-        // Also track as a custom event for better analytics
-        appInsights.trackEvent({
-          name: "PageView", 
-          properties: {
-            title: pageTitle,
-            path: pageName,
-            url: window.location.href,
-            timestamp: new Date().toISOString(),
-            host: window.location.hostname,
-            referrer: document.referrer || "direct"
-          }
-        });
+        // Add a small delay to ensure the SDK is fully loaded
+        setTimeout(() => {
+          // Track initial page view with full details
+          const pageName = window.location.pathname;
+          const pageTitle = document.title || pageName;
+          
+          // First track as standard pageView for dashboard compatibility
+          appInsights!.trackPageView({
+            name: pageTitle, 
+            uri: window.location.href
+          });
+          
+          // Also track as a custom event for better analytics
+          appInsights!.trackEvent({
+            name: "PageView",
+            properties: {
+              title: pageTitle,
+              path: pageName,
+              url: window.location.href,
+              timestamp: new Date().toISOString(),
+              host: window.location.hostname,
+              referrer: document.referrer || "direct",
+              userAgent: navigator.userAgent,
+              isStaticWebApp: true
+            }
+          });
+          
+          console.log("Application Insights initialized and initial page view tracked for Static Web App:", pageName);
+        }, 100); // Small delay for static web apps
         
         // Make appInsights available globally for route tracking
         window.appInsights = appInsights;
         
-        console.log("Application Insights initialized and initial page view tracked for:", pageName);
       } catch (error) {
         console.error('Failed to initialize Application Insights:', error);
       }
     } else {
       console.warn("Application Insights connection string not found. Analytics will not be initialized.");
+      console.warn("Please ensure NEXT_PUBLIC_APPINSIGHTS_CONNECTION_STRING is set in your environment variables.");
     }
   } else {
     if (appInsights) {
       console.log("Application Insights already initialized.");
     }
     if (typeof window === 'undefined') {
-      console.log("Cannot initialize Application Insights on the server.");
+      console.log("Cannot initialize Application Insights on the server (Static Web App).");
     }
   }
   

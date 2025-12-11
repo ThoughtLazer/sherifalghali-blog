@@ -5,7 +5,9 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   images: {
     unoptimized: true
-  }
+  },
+  // Static export configuration for Azure Static Web Apps
+  distDir: 'out',
 };
 
 export default nextConfig;
