@@ -1,9 +1,10 @@
-# Azure Application Insights Setup Guide
+# Azure Application Insights Setup Guide for Static Web App
 
 ## Prerequisites
 - Azure Subscription
 - Azure CLI installed and logged in
 - Resource Group for your website resources
+- Azure Static Web Apps configured
 
 ## Step 1: Create Application Insights Resource
 
@@ -11,7 +12,7 @@
 # Set variables
 RESOURCE_GROUP="your-resource-group-name"
 APP_INSIGHTS_NAME="sherifalghali-blog-insights"
-LOCATION="eastus"
+LOCATION="southcentralus"
 
 # Create Application Insights resource
 az monitor app-insights component create \
@@ -33,21 +34,61 @@ az monitor app-insights component show \
   --output tsv
 ```
 
-## Step 3: Configure Environment Variables
+## Step 3: Configure Environment Variables for Static Web App
 
-1. Copy the connection string from Step 2
-2. Create a `.env.local` file in your project root:
+### For Local Development:
+1. Copy `.env.example` to `.env.local`
+2. Add your connection string:
 
 ```env
-NEXT_PUBLIC_APPINSIGHTS_CONNECTION_STRING=InstrumentationKey=your-key-here;IngestionEndpoint=https://eastus-8.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus.livediagnostics.monitor.azure.com/
-NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_APPINSIGHTS_CONNECTION_STRING=InstrumentationKey=your-key-here;IngestionEndpoint=https://southcentralus-3.in.applicationinsights.azure.com/;LiveEndpoint=https://southcentralus.livediagnostics.monitor.azure.com/
 ```
 
-## Step 4: Set up Google Analytics (Optional)
+### For Azure Static Web Apps Production:
+1. Go to your Static Web App in Azure Portal
+2. Navigate to Configuration
+3. Add Application Setting:
+   - **Name**: `NEXT_PUBLIC_APPINSIGHTS_CONNECTION_STRING`
+   - **Value**: Your connection string from Step 2
 
-1. Go to [Google Analytics](https://analytics.google.com/)
-2. Create a new property for your website
-3. Get your Measurement ID (format: G-XXXXXXXXXX)
+## Step 4: Build and Deploy Static Web App
+
+```bash
+# Build for static export
+npm run build
+
+# The output will be in the 'out' directory
+# This directory should be deployed to Azure Static Web Apps
+```
+
+## Step 5: Verify Configuration
+
+After deployment:
+1. Visit your deployed site
+2. Open browser developer tools (F12)
+3. Check console for Application Insights initialization messages
+4. Navigate between pages to generate telemetry
+5. Check Application Insights dashboard after 5-10 minutes
+
+## Static Web App Specific Configuration
+
+### CSP Headers (staticwebapp.config.json)
+Ensure your `public/staticwebapp.config.json` includes Application Insights domains:
+
+```json
+{
+  "globalHeaders": {
+    "Content-Security-Policy": "connect-src 'self' https://*.in.applicationinsights.azure.com https://*.livediagnostics.monitor.azure.com https://*.applicationinsights.azure.com;"
+  }
+}
+```
+
+### Key Features Enabled:
+- ✅ Page View Tracking
+- ✅ Custom Event Tracking (Article Views, Engagement)
+- ✅ Performance Monitoring
+- ✅ Error Tracking
+- ✅ User Session Analytics
 4. Add it to your `.env.local` file
 
 ## Step 5: Deploy and Test

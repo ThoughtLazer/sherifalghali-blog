@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:static": "next build",
+    "export": "next export"
   },
   "dependencies": {
     "@microsoft/applicationinsights-react-js": "^19.3.7",
