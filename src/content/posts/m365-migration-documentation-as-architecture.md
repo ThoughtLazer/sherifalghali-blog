@@ -1,29 +1,27 @@
 ---
 title: "M365 Migration Documentation as Architecture: How I Learned That Documentation Is My Friend"
-date: 2026-01-18
-categories: 
-  - "microsoft-365"
-  - "migrations"
-  - "tech"
-featuredImage: "https://sherifalghalistaticsite.blob.core.windows.net/images/[YOUR_IMAGE_FILENAME].png"
+date: "2026-02-11"
 excerpt: "I used to hate documentation. After leading 60+ M365 migrations, I learned it's actually the most critical part of any project. Here's the discovery process that works."
+featuredImage: "https://sherifalghalistaticsite.blob.core.windows.net/images/M365MigrationImage.png"
+category: "Tech"
+tags: ["microsoft-365", "migrations", "M365", "documentation"]
 ---
 
 # M365 Migration Documentation as Architecture: How I Learned That Documentation Is My Friend
 
 I used to hate documentation.
 
-For a long time, my mindset was pure engineering: build the thing, fix the thing, move on to the next thing. Documentation felt like a chore, something you did at the very end to satisfy a Project Manager or a compliance checklist. I wanted to focus on the task in front of me, not drafting documents in Word.
+For a long time, my mindset was pure engineering: build, troubleshoot, move on to the next thing. Documentation felt like a chore, something you did at the very end to satisfy a Project Manager or a compliance checklist. I wanted to focus on the task in front of me, not drafting documents in Word.
 
-But years of working as a consultant and implementations engineer, and especially after nearly two years of leading complex, tenant-to-tenant migrations, my perspective has shifted completely. I've learned that clear plans aren't just for PMs; they are critical tools for engineers and solutions architects. When you are working on massive projects with multiple stakeholders, different legal entities, and distributed teams across five time zones, you cannot just "figure it out as you go."
+But years of working as a consultant and implementation engineer, and especially after nearly two years of leading complex, tenant-to-tenant migrations, my perspective has shifted completely. I've learned that clear plans aren't just for PMs; they are critical tools for engineers and solutions architects. When you are working on massive projects with multiple stakeholders, different legal entities, and distributed teams across five time zones, you cannot just "figure it out as you go."
 
-In this new era of remote work and fragmented teams, documentation *is* the architecture. It is the only way to ensure that what you are building in the console matches what the business actually needs.
+In this new era of remote work and fragmented teams, documentation *is* the architecture. It is the only way to ensure that what you are building matches what the business actually needs.
 
 ## The Foundation: The Project Manager and The Kick-Off
 
 Before we dig into the technical weeds, we have to set the stage. I write this from the perspective of a Project Engineer and Solutions Architect; my job is the "how" and the execution. However, none of this works without a solid Project Manager (PM). In complex, multi-year migration timelines, a good PM is worth their weight in gold. They manage the stakeholders so I can manage the architecture and implementation.
 
-Our first major piece of documentation is the **Kick-Off Checklist**. This isn't just a calendar invite. We use a specific checklist to ensure the client knows exactly what to expect over the coming months. We cover the timeline, the freeze periods, and the inevitable friction points. If we don't document these expectations upfront, we end up fighting unnecessary battles halfway through the migration. More importantly, we review this with the client on the kickoff call and ask for feedback along the way. This is usually the client's first time interacting with the team. It makes the team look prepared and professional. Also, asking them for feedback sets the tone for our sometimes months-long collaboration.
+Our first major piece of documentation is the **Kick-Off Checklist**. We use a specific checklist to ensure the client knows exactly what to expect over the coming months. We cover the timeline, the outage window, and the inevitable friction points. If we don't document these expectations upfront, we end up fighting unnecessary battles halfway through the migration. More importantly, we review this with the client on the kickoff call and ask for feedback along the way. This is usually the client's first time interacting with the team. It makes the team look prepared and professional. Also, asking them for feedback sets the tone for our sometimes months-long collaboration.
 
 As I tell our clients in kick-off: Migrations are disruptive. I cannot guarantee you perfection, but our team will give you the smoothest migration possible. We ask so many questions so that we don't break your business.
 
@@ -139,11 +137,9 @@ If your technical checklist is solid, the actual migration execution becomes alm
 
 ## Conclusion: Documentation is Your Guardrails
 
-Getting to migration night requires weeks or months of preparation. The Kick-Off checklist, the BU Survey, the RMM reports, the Enterprise App audit, and the Tenant Documentation are not just paperwork. They are the guardrails that keep the project on the road. They are the reason we don't wake up on "Day 1" to find out we missed a critical Power Automate flow or deleted the VP's archived mailbox.
+Getting to migration night requires weeks or months of preparation. The Kick-Off checklist, the BU Survey, the RMM reports, the Enterprise App audit, and the Tenant Documentation are not just paperwork. They are the guardrails that keep the project on the road. They are the reason we don't wake up on "Day 1" to find out we missed a critical Power Automate flow or the support queue isn't receiving tickets.
 
 Migrations are inherently messy. There are always unexpected issues. But your documentation shouldn't be messy. Clear, comprehensive documentation is what transforms a chaotic migration into a managed one.
-
-If you're building your own migration practice or refining your processes, I encourage you to invest in documentation *before* you invest in tooling. The best migration tools in the world won't save you if you don't know what you're migrating or why.
 
 And if you've learned similar lessons in your own migrations (or if you disagree with my approach) I'd love to hear about it. The Microsoft community grows stronger when we share both our successes and our failures. Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/sherifalghali/).
 
