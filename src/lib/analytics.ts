@@ -1,5 +1,6 @@
 import { ApplicationInsights } from '@microsoft/applicationinsights-web';
 import { ReactPlugin } from '@microsoft/applicationinsights-react-js';
+import { siteConfig } from '@/lib/siteConfig';
 
 // Application Insights configuration
 let appInsights: ApplicationInsights | null = null;
@@ -7,11 +8,7 @@ let reactPlugin: ReactPlugin | null = null;
 
 export const initializeAppInsights = () => {
   if (typeof window !== 'undefined' && !appInsights) {
-    const connectionString = process.env.NEXT_PUBLIC_APPINSIGHTS_CONNECTION_STRING;
-    
-    console.log("Attempting to initialize Application Insights for Static Web App...");
-    console.log("Connection string exists:", !!connectionString);
-    console.log("Environment:", process.env.NODE_ENV);
+    const connectionString = siteConfig.analytics.appInsightsConnectionString;
 
     if (connectionString) {
       console.log("Application Insights connection string found.");
@@ -92,7 +89,7 @@ export const initializeAppInsights = () => {
 };
 
 // Google Analytics configuration
-export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID;
+export const GA_TRACKING_ID = siteConfig.analytics.gaTrackingId;
 
 declare global {
   interface Window {

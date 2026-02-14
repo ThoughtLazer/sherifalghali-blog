@@ -1,8 +1,63 @@
+import type { Metadata } from "next"
 import { Layout } from "@/components/layout/layout"
+import { JsonLd } from "@/components/seo/JsonLd"
+import { siteConfig } from "@/lib/siteConfig"
+
+export const metadata: Metadata = {
+  title: "About Sherif Alghali - Microsoft Certified Trainer & Azure Solutions Architect",
+  description:
+    "Learn about Sherif Alghali, a Microsoft Certified Trainer (MCT) and Azure Solutions Architect Expert specializing in IT infrastructure, Azure cloud, M365 migrations, and cybersecurity.",
+  alternates: {
+    canonical: "/about/",
+  },
+  openGraph: {
+    title: "About Sherif Alghali",
+    description:
+      "Microsoft Certified Trainer (MCT) and Azure Solutions Architect Expert specializing in IT infrastructure, cloud technologies, and M365 migrations.",
+    type: "profile",
+    images: [siteConfig.author.image],
+  },
+}
 
 export default function About() {
   return (
     <Layout>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ProfilePage",
+          mainEntity: {
+            "@type": "Person",
+            name: "Sherif Alghali",
+            url: `${siteConfig.url}/about/`,
+            image: siteConfig.author.image,
+            email: siteConfig.author.email,
+            jobTitle: siteConfig.author.jobTitle,
+            description:
+              "Microsoft Certified Trainer (MCT), Azure Solutions Architect Expert, and IT Infrastructure professional specializing in Azure cloud technologies, M365 migrations, and hybrid cloud solutions.",
+            sameAs: [
+              siteConfig.author.linkedin,
+              siteConfig.author.github,
+              siteConfig.author.bluesky,
+              "https://learn.microsoft.com/en-us/users/sherifalghali-8310/transcript/d5l8kuy1yxl0gk5?tab=credentials-tab",
+            ],
+            knowsAbout: [
+              "Azure Cloud Architecture",
+              "IT Infrastructure Design",
+              "Microsoft 365 Migrations",
+              "VMware Virtualization",
+              "Cloud Migration",
+              "Network Security",
+              "Cybersecurity",
+            ],
+            hasCredential: siteConfig.author.certifications.map((cert) => ({
+              "@type": "EducationalOccupationalCredential",
+              credentialCategory: "Professional Certification",
+              name: cert,
+            })),
+          },
+        }}
+      />
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center py-8">
