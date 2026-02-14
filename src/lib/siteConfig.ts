@@ -29,6 +29,6 @@ export const siteConfig = {
   analytics: {
     appInsightsConnectionString:
       'InstrumentationKey=21b09191-b522-48fb-bb1b-7398fb2dee37;IngestionEndpoint=https://southcentralus-3.in.applicationinsights.azure.com/;LiveEndpoint=https://southcentralus.livediagnostics.monitor.azure.com/;ApplicationId=315f555b-1398-43cd-9fe8-75e1f83c15a4',
-    gaTrackingId: 'G-Z2T21TW25T',
+    gaTrackingId: 'G-XR44Z6ISPL',
   },
 } as const;
