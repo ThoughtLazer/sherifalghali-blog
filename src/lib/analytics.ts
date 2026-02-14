@@ -18,12 +18,7 @@ export const initializeAppInsights = () => {
           config: {
             connectionString: connectionString,
             extensions: [reactPlugin],
-            extensionConfig: {
-              [reactPlugin.identifier]: {
-                history: window.history,
-              },
-            },
-            enableAutoRouteTracking: false, // We'll handle route tracking manually
+            enableAutoRouteTracking: false, // We handle route tracking manually in AnalyticsProvider
             enableCorsCorrelation: true,
             enableRequestHeaderTracking: true,
             enableResponseHeaderTracking: true,
