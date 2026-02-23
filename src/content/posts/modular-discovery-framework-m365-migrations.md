@@ -1,8 +1,8 @@
 ---
 title: "The Modular Discovery Framework for M365 Migrations"
-date: "2026-02-16"
+date: "2026-02-23"
 excerpt: "Migrations with lots of moving parts can be overwhelming. Discovery especially so. Here's the systematic framework that prevents paralysis and avoids last-minute gotchas by treating each migration type as a set of building blocks you add or subtract."
-featuredImage: "https://sherifalghalistaticsite.blob.core.windows.net/images/[PLACEHOLDER].png"
+featuredImage: "https://sherifalghalistaticsite.blob.core.windows.net/images/modular-m365.png"
 category: "Tech"
 tags: ["M365", "migration", "google-workspace", "discovery", "planning"]
 ---
@@ -11,7 +11,7 @@ tags: ["M365", "migration", "google-workspace", "discovery", "planning"]
 
 Migrations with lots of moving parts can be overwhelming. Discovery especially so. That's why the modular framework is so important. It's like tools in a toolbox. You ask the client some preliminary questions and then you bring the right tools for the job.
 
-For instance, I can give you one tool immediately that I use only for Google to M365 migrations: https://gettenantpartitionweb.azurewebsites.net/. We now ask for and check if a Google domain is already associated with an M365 tenant. We've been burned a couple times when either trying to migrate the domain the night of the migration or in doing some last-minute checks the day of the migration. We ask the client and also use that tool to be sure.
+For instance, I can give you one tool immediately that I use only for Google to M365 migrations: https://gettenantpartitionweb.azurewebsites.net/. We now ask for and check if a Google domain is already associated with an M365 tenant. We've been burned a couple times when either trying to migrate the domain the night of the migration or in doing some last-minute checks the day of the migration.
 
 In M365 to M365, we know that we need to remove the domain from the previous M365 tenant. But in Google to M365 domains, we don't know if it has been claimed by another M365 tenant in the past. That's why we run the tool to be sure. The modular framework is about knowing which tools you need before you start the work.
 
@@ -36,6 +36,8 @@ We're going to treat user accounts as a module, shared mailboxes as a module, on
 Every user has a mailbox and personal storage, regardless of platform. Mail migration is foundational. OneDrive/Google Drive is foundational. These are the modules that appear in every migration. As I learned from [70+ migrations over nearly two years](https://www.sherifalghali.com/blog/posts/things-i-learned-from-one-year-of-m365-migrations/), the preparation phase is the most critical, and these foundational modules are where preparation starts.
 
 **Mailboxes:** Whether it's Google Workspace, M365, or IMAP, I'm looking for shared mailboxes over 50GB and user mailboxes over 100GB. M365 licensing limitations make these important to flag during discovery.
+
+Shared mailbox permissions need to be asked about on Google to M365 migrations. Since many shared mailboxes are indistinguishable from user mailboxes in Google Workspace, we need to ask the POCs about who will have access and what level of access they will have (Full Access, Send As, or both).
 
 **Personal Storage:** OneDrive, Google Drive, or personal drives/folders on an on-prem file server. The threshold is 1TB for OneDrive and Google Drive. Also, lots of drives over 100GB may mean that the pre-stage migrations may need more lead time. Storage size affects both licensing (the 1TB limit) and project timeline (pre-stage duration).
 

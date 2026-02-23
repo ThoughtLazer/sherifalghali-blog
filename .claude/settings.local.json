@@ -6,7 +6,18 @@
       "Bash(npm uninstall:*)",
       "Bash(npm install:*)",
       "WebFetch(domain:3.21.12.144)",
-      "WebFetch(domain:sherifalghali.com)"
+      "WebFetch(domain:sherifalghali.com)",
+      "Bash(wc:*)",
+      "Bash(powershell -Command \"\\(Get-Content out/index.html -Raw\\) -match ''rel=\"\"canonical\"\"''\")",
+      "Bash(powershell -Command \"\\(Get-Content out/index.html -Raw\\) -match ''application/ld\\\\+json''\")",
+      "Bash(powershell -Command:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd SEO metadata, structured data, sitemap, and fix analytics\n\n- Add robots.ts and sitemap.ts for search engine discovery\n- Add JSON-LD structured data \\(Article, Person, WebSite, BreadcrumbList\\)\n- Add canonical URLs, OpenGraph, and Twitter Card meta tags to all pages\n- Add metadataBase and title template in root layout\n- Create centralized siteConfig with author info and analytics config\n- Fix App Insights by hardcoding connection string \\(process.env not inlined in static export\\)\n- Enable Google Analytics \\(G-Z2T21TW25T\\) by adding tracking ID to siteConfig\n- Update CSP to allow Google Analytics and additional App Insights domains\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(gh run list:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nFix App Insights crash: remove incompatible history config from ReactPlugin\n\nThe ReactPlugin was configured with `history: window.history`, but it\nexpects a React Router history object with a `.listen\\(\\)` method. Since\nNext.js doesn''t use React Router, this caused a TypeError on every page\nload, preventing all App Insights telemetry from being sent.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nUpdate Google Analytics Measurement ID for new GA4 data stream\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nFix Google Analytics Measurement ID typo \\(I vs 1\\)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")"
     ],
     "deny": []
   }
