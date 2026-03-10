@@ -28,8 +28,11 @@ export async function generateMetadata({ params }: YearArchivePageProps) {
   }
 
   return {
-    title: `${year} Archive | Sherif Alghali`,
+    title: `${year} Archive`,
     description: `Tech blog posts from ${year} by Sherif Alghali. ${posts.length} ${posts.length === 1 ? 'post' : 'posts'} covering Azure, cloud infrastructure, and technology insights.`,
+    alternates: {
+      canonical: `/blog/${year}/`,
+    },
   }
 }
 

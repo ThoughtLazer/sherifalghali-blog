@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
+import { siteConfig } from "@/lib/siteConfig";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -9,15 +10,38 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Sherif Alghali - Tech Blog",
-  description: "IT Infrastructure and Azure expertise from a certified professional",
-  keywords: ["Azure", "Cloud", "IT Infrastructure", "Technology", "DevOps"],
-  authors: [{ name: "Sherif Alghali" }],
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: "Sherif Alghali - Tech Blog",
+    template: "%s | Sherif Alghali",
+  },
+  description: siteConfig.description,
+  keywords: [
+    "Sherif Alghali",
+    "Azure",
+    "Cloud",
+    "IT Infrastructure",
+    "Technology",
+    "DevOps",
+    "Microsoft 365",
+    "MCT",
+    "Microsoft Certified Trainer",
+  ],
+  authors: [{ name: "Sherif Alghali", url: siteConfig.author.url }],
   creator: "Sherif Alghali",
+  publisher: "Sherif Alghali",
   icons: {
-    icon: "https://sherifalghalistaticsite.blob.core.windows.net/images/Sherif-Favicon.jpg",
-    shortcut: "https://sherifalghalistaticsite.blob.core.windows.net/images/Sherif-Favicon.jpg",
-    apple: "https://sherifalghalistaticsite.blob.core.windows.net/images/Sherif-Favicon.jpg",
+    icon: siteConfig.favicon,
+    shortcut: siteConfig.favicon,
+    apple: siteConfig.favicon,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "Sherif Alghali - Tech Blog",
+  },
+  twitter: {
+    card: "summary_large_image",
   },
 };
 
