@@ -109,12 +109,11 @@ LargeFileMigrationsTimeout=7200000
 UseApplicationPermission=1
 Tags=IpLockDown!
 InitializationTimeout=10
-IgnoreConflictingFiles=1
 IgnoreListViewThreshold=1
 RenameConflictingFiles=1
 ```
 
-- **Rationale:** Here, `IgnoreConflictingFiles=1` and `RenameConflictingFiles=1` work together. If a file with the same name already exists, MigrationWiz will rename the migrated file rather than skipping it, ensuring no data is lost. `IgnoreListViewThreshold=1` is used to avoid issues with large numbers of files.
+- **Rationale:** We use `UseApplicationPermission=1` for modern authentication to grant the service necessary access without using a specific user account. `RenameConflictingFiles=1` ensures that if a file with the same name already exists, MigrationWiz will rename the migrated file rather than skipping it, ensuring no data is lost. `IgnoreListViewThreshold=1` is used to avoid issues with large numbers of files.
     
 
 #### Google Shared Drive to SharePoint
