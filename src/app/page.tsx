@@ -1,12 +1,37 @@
+import type { Metadata } from "next"
 import { Layout } from "@/components/layout/layout"
 import { PostCarousel } from "@/components/carousel/post-carousel"
+import { JsonLd } from "@/components/seo/JsonLd"
+import { siteConfig } from "@/lib/siteConfig"
 import { getNewestPosts } from "@/lib/posts"
+
+export const metadata: Metadata = {
+  title: "Sherif Alghali - Tech Blog | IT Infrastructure & Azure Cloud Expert",
+  description: siteConfig.description,
+  alternates: {
+    canonical: "/",
+  },
+}
 
 export default function Home() {
   const newestPosts = getNewestPosts(3)
 
   return (
     <Layout>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Sherif Alghali - Tech Blog",
+          description: siteConfig.description,
+          url: siteConfig.url,
+          author: {
+            "@type": "Person",
+            name: "Sherif Alghali",
+            url: siteConfig.author.url,
+          },
+        }}
+      />
       <div className="space-y-12">
         {/* Hero Section */}
         <div className="text-center py-12">

@@ -1,5 +1,15 @@
+import type { Metadata } from "next"
 import { Layout } from "@/components/layout/layout"
 import { MdEmail } from "react-icons/md"
+
+export const metadata: Metadata = {
+  title: "Contact Sherif Alghali",
+  description:
+    "Get in touch with Sherif Alghali for questions about Azure, cloud infrastructure, M365 migrations, or collaboration opportunities.",
+  alternates: {
+    canonical: "/contact/",
+  },
+}
 
 export default function Contact() {
   return (

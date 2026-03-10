@@ -33,6 +33,7 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_APPINSIGHTS_CONNECTION_STRING: ${{ secrets.NEXT_PUBLIC_APPINSIGHTS_CONNECTION_STRING }}
+          NEXT_PUBLIC_SITE_URL: https://www.sherifalghali.com
         
       - name: Build And Deploy
         id: builddeploy

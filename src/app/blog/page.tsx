@@ -1,7 +1,17 @@
+import type { Metadata } from "next"
 import { Layout } from "@/components/layout/layout"
 import { PostPreview } from "@/components/blog/post-preview"
 import { SidebarArchive } from "@/components/blog/sidebar-archive"
 import { getAllPosts } from "@/lib/posts"
+
+export const metadata: Metadata = {
+  title: "Tech Blog",
+  description:
+    "Articles about Azure cloud architecture, IT infrastructure, Microsoft 365 migrations, and cybersecurity by Sherif Alghali.",
+  alternates: {
+    canonical: "/blog/",
+  },
+}
 
 export default function BlogIndex() {
   const posts = getAllPosts()

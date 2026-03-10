@@ -6,6 +6,8 @@ import { getAllPosts, getPostBySlug } from '@/lib/posts'
 import { format } from 'date-fns'
 import { Layout } from '@/components/layout/layout'
 import { ArticleTracker } from '@/components/analytics/ArticleTracker'
+import { JsonLd } from '@/components/seo/JsonLd'
+import { siteConfig } from '@/lib/siteConfig'
 import 'highlight.js/styles/vs.css'
 
 interface BlogPostPageProps {
@@ -32,14 +34,23 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   }
 
   return {
-    title: `${post.title} | Sherif Alghali`,
+    title: post.title,
     description: post.excerpt,
+    alternates: {
+      canonical: `/blog/posts/${slug}/`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: 'article',
-      publishedTime: post.date,
+      publishedTime: new Date(post.date).toISOString(),
       authors: ['Sherif Alghali'],
+      ...(post.featuredImage && { images: [post.featuredImage] }),
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
       ...(post.featuredImage && { images: [post.featuredImage] }),
     },
   }
@@ -55,6 +66,60 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <Layout>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: post.title,
+          description: post.excerpt,
+          image: post.featuredImage || undefined,
+          datePublished: new Date(post.date).toISOString(),
+          dateModified: new Date(post.date).toISOString(),
+          author: {
+            "@type": "Person",
+            name: "Sherif Alghali",
+            url: `${siteConfig.url}/about/`,
+            image: siteConfig.author.image,
+          },
+          publisher: {
+            "@type": "Person",
+            name: "Sherif Alghali",
+            url: siteConfig.url,
+          },
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": `${siteConfig.url}/blog/posts/${slug}/`,
+          },
+          keywords: post.tags?.join(', '),
+          articleSection: post.category,
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Home",
+              item: `${siteConfig.url}/`,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Blog",
+              item: `${siteConfig.url}/blog/`,
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: post.title,
+              item: `${siteConfig.url}/blog/posts/${slug}/`,
+            },
+          ],
+        }}
+      />
       <ArticleTracker title={post.title} category={post.category} />
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="space-y-6">
