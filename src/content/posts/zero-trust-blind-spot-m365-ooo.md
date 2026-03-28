@@ -138,33 +138,3 @@ The reason this topic interests me isn't because out-of-office notifications are
 Zero trust isn't just a set of technical controls. It's a way of thinking about information flow. Every piece of data that leaves your organization, whether it's through an API call, a shared document, or an auto-reply to an unknown sender, is worth examining. The question isn't whether your OOF configuration is the thing that will get you breached. The question is whether you've even looked at it. And for most organizations, the honest answer is no.
 
 If you're building or refining your M365 security posture, I'd encourage you to add OOF reply settings to your next security review. Check the remote domain configuration. Look at the `ExternalAudience` settings on your high-value mailboxes. Enable Teams privacy mode if it makes sense for your organization. And most importantly, talk to your users about what they're putting in those auto-replies and email signatures. It's a small thing. But zero trust is built on small things.
-
----
-
-**LinkedIn Post:**
-
-I've been studying for the SC-300 and thinking a lot about zero trust in M365 environments lately.
-
-We invest serious time and money into conditional access, MFA, anti-phishing policies, endpoint protection, security awareness training. All built around one principle: assume breach, verify everything.
-
-Then we let employees set out-of-office replies that tell the entire internet exactly when they'll be gone, who to contact instead, and that they'll have limited access to email.
-
-🔍 That's not just a courtesy to your colleagues. That's a reconnaissance gift to anyone running a BEC campaign.
-
-Even worse: some people put their upcoming vacation dates directly in their email signature, broadcasting their absence window on every email they send for weeks before they leave.
-
-I have yet to encounter an organization that covers out-of-office notification hygiene in their security awareness training. Not one.
-
-M365 has admin controls for this (remote domain settings, ExternalAudience parameters, Teams privacy mode). Most orgs have never touched them.
-
-📝 I wrote about what admins should be checking and why this deserves a spot in your security program.
-
-#ZeroTrust #Microsoft365
-
-[ARTICLE URL]
-
----
-
-**Suggested Featured Image Prompt:**
-
-A clean, modern illustration of a glowing office building at night with one window lit up, casting a beam of light outward into darkness where a shadowy figure stands observing. The building should have a subtle digital shield or lock icon overlaid on it (suggesting security), but the beam of light from the single window breaks through the shield. Color palette: deep blues and teals for the building and darkness, warm amber/gold for the light beam, with subtle circuit board or network node patterns in the background. Professional and understated, not cartoonish. Widescreen 16:9 aspect ratio.
