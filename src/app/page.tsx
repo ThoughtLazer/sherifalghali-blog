@@ -27,8 +27,10 @@ export default function Home() {
           url: siteConfig.url,
           author: {
             "@type": "Person",
+            "@id": siteConfig.author.id,
             name: "Sherif Alghali",
             url: siteConfig.author.url,
+            sameAs: siteConfig.author.sameAs,
           },
         }}
       />
@@ -39,7 +41,7 @@ export default function Home() {
             Knowledge. Experience. Growth.
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            Exploring IT infrastructure, Azure cloud technologies, and sharing insights 
+            Exploring IT infrastructure, Azure cloud technologies, and sharing insights
             from my journey as a technology professional.
           </p>
         </div>

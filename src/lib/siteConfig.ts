@@ -10,14 +10,26 @@ export const siteConfig = {
     linkedin: 'https://www.linkedin.com/in/salghali/',
     github: 'https://github.com/ThoughtLazer',
     bluesky: 'https://bsky.app/profile/thoughtlazer.bsky.social',
+    youtube: 'https://www.youtube.com/channel/UCnw0FK2CsGXRvq81kWtmtLw',
     image:
       'https://sherifalghalistaticsite.blob.core.windows.net/images/20220210_170751740_iOS 1.jpg',
     jobTitle: 'IT Infrastructure & Azure Cloud Professional',
+    // Stable identifier so every Person reference across the site (articles,
+    // homepage, About) resolves to a single entity in Google's Knowledge Graph.
+    id: 'https://www.sherifalghali.com/about/#person',
+    sameAs: [
+      'https://www.linkedin.com/in/salghali/',
+      'https://github.com/ThoughtLazer',
+      'https://bsky.app/profile/thoughtlazer.bsky.social',
+      'https://www.youtube.com/channel/UCnw0FK2CsGXRvq81kWtmtLw',
+      'https://learn.microsoft.com/en-us/users/sherifalghali-8310/transcript/d5l8kuy1yxl0gk5?tab=credentials-tab',
+    ],
     certifications: [
       'Microsoft Certified Trainer (MCT)',
       'Azure Solutions Architect Expert',
       'Microsoft 365 Certified: Administrator Expert',
       'Cybersecurity Architect Expert',
+      'Azure Virtual Desktop Specialty',
       'Azure Network Engineer Associate',
       'Azure Security Engineer Associate',
       'Azure Administrator Associate',

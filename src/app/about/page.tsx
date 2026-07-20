@@ -28,6 +28,7 @@ export default function About() {
           "@type": "ProfilePage",
           mainEntity: {
             "@type": "Person",
+            "@id": siteConfig.author.id,
             name: "Sherif Alghali",
             url: `${siteConfig.url}/about/`,
             image: siteConfig.author.image,
@@ -35,12 +36,7 @@ export default function About() {
             jobTitle: siteConfig.author.jobTitle,
             description:
               "Microsoft Certified Trainer (MCT), Azure Solutions Architect Expert, and IT Infrastructure professional specializing in Azure cloud technologies, M365 migrations, and hybrid cloud solutions.",
-            sameAs: [
-              siteConfig.author.linkedin,
-              siteConfig.author.github,
-              siteConfig.author.bluesky,
-              "https://learn.microsoft.com/en-us/users/sherifalghali-8310/transcript/d5l8kuy1yxl0gk5?tab=credentials-tab",
-            ],
+            sameAs: siteConfig.author.sameAs,
             knowsAbout: [
               "Azure Cloud Architecture",
               "IT Infrastructure Design",
@@ -58,11 +54,43 @@ export default function About() {
           },
         }}
       />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            {
+              "@type": "Question",
+              name: "Who is Sherif Alghali?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Sherif Alghali is a Microsoft Certified Trainer (MCT) and Azure Solutions Architect Expert who specializes in Microsoft 365 tenant migrations, Azure cloud architecture, identity, and IT infrastructure.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "What does Sherif Alghali do?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Sherif Alghali designs and leads Microsoft 365 and Azure migrations, writes about M365 tenant-to-tenant migrations, identity (Entra), and cloud infrastructure, and trains IT professionals as a Microsoft Certified Trainer.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "What certifications does Sherif Alghali hold?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Sherif Alghali holds Microsoft expert certifications including Azure Solutions Architect Expert, Cybersecurity Architect Expert, and Microsoft 365 Administrator Expert, the Azure Virtual Desktop Specialty, several Azure associate certifications, and the Microsoft Certified Trainer (MCT) credential.",
+              },
+            },
+          ],
+        }}
+      />
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center py-8">
           <h1 className="text-4xl font-bold mb-4 text-gray-900">
-            About Me
+            About Sherif Alghali
           </h1>
           <p className="text-xl text-gray-600">
             IT Infrastructure & Azure Cloud Professional
@@ -131,6 +159,13 @@ export default function About() {
                   </div>
                 </div>
                 
+                <div className="bg-amber-50 p-4 rounded-lg border border-amber-200">
+                  <h4 className="font-semibold text-amber-900 mb-2">Microsoft Specialty Certifications</h4>
+                  <div className="space-y-2 text-sm">
+                    <p className="text-gray-700">• <strong>Azure Virtual Desktop Specialty</strong> (AZ-140)</p>
+                  </div>
+                </div>
+
                 <div className="bg-green-50 p-4 rounded-lg border border-green-200">
                   <h4 className="font-semibold text-green-900 mb-2">Microsoft Associate Level Certifications</h4>
                   <div className="space-y-2 text-sm">
@@ -139,7 +174,7 @@ export default function About() {
                     <p className="text-gray-700">• <strong>Azure Administrator Associate</strong></p>
                   </div>
                 </div>
-                
+
                 <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
                   <h4 className="font-semibold text-purple-900 mb-2">Other Professional Certifications</h4>
                   <div className="space-y-2 text-sm">
@@ -171,16 +206,24 @@ export default function About() {
                 >
                   BlueSky
                 </a>
-                <a 
-                  href="https://github.com/ThoughtLazer" 
+                <a
+                  href="https://github.com/ThoughtLazer"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:text-blue-800 transition-colors"
                 >
                   GitHub
                 </a>
-                <a 
-                  href="https://learn.microsoft.com/en-us/users/sherifalghali-8310/transcript/d5l8kuy1yxl0gk5?tab=credentials-tab" 
+                <a
+                  href={siteConfig.author.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-800 transition-colors"
+                >
+                  YouTube
+                </a>
+                <a
+                  href="https://learn.microsoft.com/en-us/users/sherifalghali-8310/transcript/d5l8kuy1yxl0gk5?tab=credentials-tab"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:text-blue-800 transition-colors"
@@ -188,6 +231,49 @@ export default function About() {
                   Microsoft Transcript
                 </a>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ */}
+        <div className="mt-8">
+          <h2 className="text-2xl font-bold mb-4 text-gray-900">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-4">
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900">
+                Who is Sherif Alghali?
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Sherif Alghali is a Microsoft Certified Trainer (MCT) and Azure
+                Solutions Architect Expert who specializes in Microsoft 365 tenant
+                migrations, Azure cloud architecture, identity, and IT
+                infrastructure.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900">
+                What does Sherif Alghali do?
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Sherif Alghali designs and leads Microsoft 365 and Azure
+                migrations, writes about M365 tenant-to-tenant migrations,
+                identity (Entra), and cloud infrastructure, and trains IT
+                professionals as a Microsoft Certified Trainer.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900">
+                What certifications does Sherif Alghali hold?
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                Sherif Alghali holds Microsoft expert certifications including
+                Azure Solutions Architect Expert, Cybersecurity Architect Expert,
+                and Microsoft 365 Administrator Expert, the Azure Virtual Desktop
+                Specialty, several Azure associate certifications, and the
+                Microsoft Certified Trainer (MCT) credential.
+              </p>
             </div>
           </div>
         </div>

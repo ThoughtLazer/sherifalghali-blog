@@ -77,9 +77,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           dateModified: new Date(post.date).toISOString(),
           author: {
             "@type": "Person",
+            "@id": siteConfig.author.id,
             name: "Sherif Alghali",
             url: `${siteConfig.url}/about/`,
             image: siteConfig.author.image,
+            jobTitle: siteConfig.author.jobTitle,
+            sameAs: siteConfig.author.sameAs,
           },
           publisher: {
             "@type": "Person",
@@ -142,17 +145,30 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             
             <div className="flex flex-wrap gap-4 text-gray-600">
               <div className="flex items-center gap-1">
+                <span className="text-sm">
+                  By{' '}
+                  <a
+                    href="/about/"
+                    rel="author"
+                    className="font-medium text-blue-600 hover:text-blue-800"
+                  >
+                    Sherif Alghali
+                  </a>
+                </span>
+              </div>
+
+              <div className="flex items-center gap-1">
                 <MdCalendarToday />
                 <span className="text-sm">
                   {(() => {
                     const postDate = new Date(post.date)
-                    return isNaN(postDate.getTime()) 
-                      ? "Invalid Date" 
+                    return isNaN(postDate.getTime())
+                      ? "Invalid Date"
                       : format(postDate, 'MMMM d, yyyy')
                   })()}
                 </span>
               </div>
-              
+
               {post.category && (
                 <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                   {post.category}
@@ -193,6 +209,44 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
             </div>
           )}
+
+          {/* Author Bio */}
+          <div className="mt-8 flex flex-col gap-4 rounded-lg border border-gray-200 bg-gray-50 p-6 sm:flex-row sm:items-start">
+            <img
+              src={siteConfig.author.image}
+              alt="Sherif Alghali"
+              className="h-20 w-20 flex-shrink-0 rounded-full object-cover"
+            />
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wide text-gray-500">
+                About the author
+              </p>
+              <h2 className="mt-1 text-lg font-bold text-gray-800">
+                <a href="/about/" rel="author" className="hover:text-blue-600">
+                  Sherif Alghali
+                </a>
+              </h2>
+              <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                Sherif Alghali is a Microsoft Certified Trainer (MCT), Azure
+                Solutions Architect Expert, and Microsoft 365 Administrator Expert
+                who writes about M365 tenant migrations, Azure cloud
+                architecture, identity, and IT infrastructure. Read more on the{' '}
+                <a href="/about/" className="text-blue-600 hover:text-blue-800">
+                  about page
+                </a>{' '}
+                or connect on{' '}
+                <a
+                  href={siteConfig.author.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-800"
+                >
+                  LinkedIn
+                </a>
+                .
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </Layout>

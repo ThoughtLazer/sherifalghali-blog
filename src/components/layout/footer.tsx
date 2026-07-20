@@ -6,24 +6,39 @@ export function Footer() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex justify-between items-center">
           <p className="text-gray-600 text-sm">
-            © {currentYear} Sherif Alghali. All rights reserved.
+            © {currentYear}{' '}
+            <a
+              href="/about/"
+              className="hover:text-blue-600 transition-colors"
+            >
+              Sherif Alghali
+            </a>
+            . All rights reserved.
           </p>
           <div className="flex gap-4">
-            <a 
-              href="https://www.linkedin.com/in/salghali/" 
+            <a
+              href="https://www.linkedin.com/in/salghali/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-blue-600 text-sm transition-colors"
             >
               LinkedIn
             </a>
-            <a 
-              href="https://github.com/ThoughtLazer" 
+            <a
+              href="https://github.com/ThoughtLazer"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-blue-600 text-sm transition-colors"
             >
               GitHub
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UCnw0FK2CsGXRvq81kWtmtLw"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-blue-600 text-sm transition-colors"
+            >
+              YouTube
             </a>
           </div>
         </div>
