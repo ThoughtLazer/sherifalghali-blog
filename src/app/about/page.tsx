@@ -125,9 +125,18 @@ export default function About() {
                 accessible to everyone.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                When I'm not immersed in the world of cloud technologies and IT infrastructure, you'll 
-                find me traveling to new destinations, getting lost in a good book, or expressing my 
-                creativity through writing.
+                When I'm not immersed in the world of cloud technologies and IT infrastructure, you'll
+                find me traveling to new destinations, getting lost in a good book, or expressing my
+                creativity through writing. I share stories and tips from my travels at{" "}
+                <a
+                  href="https://www.randomtravelnotes.com"
+                  target="_blank"
+                  rel="me noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-800"
+                >
+                  Random Travel Notes
+                </a>
+                .
               </p>
             </div>
 

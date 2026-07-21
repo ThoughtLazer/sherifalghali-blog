@@ -22,6 +22,7 @@ export const siteConfig = {
       'https://github.com/ThoughtLazer',
       'https://bsky.app/profile/thoughtlazer.bsky.social',
       'https://www.youtube.com/channel/UCnw0FK2CsGXRvq81kWtmtLw',
+      'https://www.randomtravelnotes.com',
       'https://learn.microsoft.com/en-us/users/sherifalghali-8310/transcript/d5l8kuy1yxl0gk5?tab=credentials-tab',
     ],
     certifications: [
