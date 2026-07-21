@@ -239,6 +239,14 @@ export default function About() {
                 >
                   Microsoft Transcript
                 </a>
+                <a
+                  href="https://gravatar.com/sherifalghali"
+                  target="_blank"
+                  rel="me noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-800 transition-colors"
+                >
+                  Gravatar
+                </a>
               </div>
             </div>
           </div>
