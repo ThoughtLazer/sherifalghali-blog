@@ -16,7 +16,7 @@ I gave my first-ever talk last October, at MCT Summit Japan in 2025. I am writin
 
 It started with a chance meeting.
 
-At the North America MCT Summit in Seattle in March 2025, I got to talking with one of the people behind an MCT event in Japan. I mentioned that Japan was already on my list for the year, and I joked about how perfect it would be if the dates happened to line up. A few months later, the call for presentations went out. I applied, I was accepted, and the conference landed squarely inside my planned October vacation. Sometimes the stars do align.
+At the North America MCT Summit in Seattle in March 2025, I got to talking with one of the people behind an MCT event in Japan. I mentioned that Japan was already on my list for the year, and said how perfect it would be if the dates happened to line up. It was the kind of thing you say out loud while giving it only a small chance of ever happening. A few months later, the call for presentations went out. I applied, I was accepted, and the conference landed squarely inside my planned October vacation. Sometimes the stars do align.
 
 I shared a quick note about all of this on [LinkedIn](https://www.linkedin.com/posts/salghali_mctsummitjapan-mctsummit-techboostsummit-ugcPost-7383328537291874304-BbwU/) right after. But it was my first time speaking, and I wanted to take the time to write about it fully, and to share what I actually learned from being a first-time presenter.
 
@@ -34,7 +34,7 @@ For the stage version, I leaned harder into the failures, because those are the 
 
 ## Nervous, and in exactly the right room
 
-I will not pretend I was not nervous. It was my first time presenting, and standing in front of a room, with a remote audience watching too, is a very different thing from writing a blog post.
+I will not pretend I was not nervous. This was my first time presenting professionally, and what made me nervous was wanting to be sure that what I said actually had value and resonated with the room. Standing in front of a live audience, with a remote one watching too, is a very different thing from writing a blog post.
 
 But if I had to choose a place for a first talk, I could not have picked a better one. The MCT community was so supportive. People genuinely wanted me to do well, and you could feel it in the room. That is the difference between white-knuckling your way through and actually enjoying yourself up there. For anyone putting off their first talk out of nerves, I would say this: the room matters, and this was the right room.
 
