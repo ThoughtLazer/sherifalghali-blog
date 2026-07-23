@@ -43,3 +43,6 @@ next-env.d.ts
 
 # obsidian
 .obsidian/
+
+# LinkedIn announcement post drafts (pre-publication, not for the public repo)
+linkedin/
