@@ -185,6 +185,39 @@
       },
       "name": "browsers",
       "timeContextFromParameter": "TimeRange"
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "let base = pageViews | extend RoleName = iif(isempty(cloud_RoleName), '(untagged)', cloud_RoleName) | where '{Site}' == 'All' or RoleName == '{Site}' | extend ref = tostring(customDimensions.refUri) | extend refHost = tostring(parse_url(ref).Host) | extend Source = case(isempty(ref), 'Direct', refHost has_any('google.','bing.','duckduckgo','yahoo','ecosia'), 'Search', refHost has_any('facebook','t.co','twitter','x.com','linkedin','reddit','instagram','youtube','pinterest'), 'Social', refHost has_any('sherifalghali.com','randomtravelnotes.com','aos-technology.com'), 'Internal', 'Referral') | summarize Views = count() by Source;\nbase\n| union (base | summarize n = count() | where n == 0 | project Source = 'No data', Views = 0)\n| order by Views desc",
+        "size": 1,
+        "title": "Traffic sources",
+        "queryType": 0,
+        "resourceType": "microsoft.insights/components",
+        "visualization": "piechart"
+      },
+      "name": "traffic-sources",
+      "timeContextFromParameter": "TimeRange"
+    },
+    {
+      "type": 3,
+      "content": {
+        "version": "KqlItem/1.0",
+        "query": "let base = pageViews | extend RoleName = iif(isempty(cloud_RoleName), '(untagged)', cloud_RoleName) | where '{Site}' == 'All' or RoleName == '{Site}' | extend ref = tostring(customDimensions.refUri) | where isnotempty(ref) | extend refHost = tostring(parse_url(ref).Host) | where isnotempty(refHost) and not(refHost has_any('sherifalghali.com','randomtravelnotes.com','aos-technology.com')) | summarize Views = count() by Referrer = refHost;\nbase\n| union (base | summarize n = count() | where n == 0 | project Referrer = 'No external referrers', Views = 0)\n| top 15 by Views desc",
+        "size": 1,
+        "title": "Top referrers (external sources)",
+        "queryType": 0,
+        "resourceType": "microsoft.insights/components",
+        "visualization": "table",
+        "gridSettings": {
+          "formatters": [
+            { "columnMatch": "Views", "formatter": 8, "formatOptions": { "palette": "orange" } }
+          ]
+        }
+      },
+      "name": "top-referrers",
+      "timeContextFromParameter": "TimeRange"
     }
   ],
   "styleSettings": {},
