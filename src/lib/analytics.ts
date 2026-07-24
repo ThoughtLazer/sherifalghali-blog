@@ -30,7 +30,15 @@ export const initializeAppInsights = () => {
         });
         
         appInsights.loadAppInsights();
-        
+
+        // Tag every telemetry item with this site's cloud role name so the
+        // shared App Insights resource (also used by randomtravelnotes.com and
+        // aos-technology.com) can be sliced by site in one Workbook.
+        appInsights.addTelemetryInitializer((envelope) => {
+          envelope.tags = envelope.tags || {};
+          envelope.tags["ai.cloud.role"] = "sherifalghali.com";
+        });
+
         // Add a small delay to ensure the SDK is fully loaded
         setTimeout(() => {
           // Track initial page view with full details
