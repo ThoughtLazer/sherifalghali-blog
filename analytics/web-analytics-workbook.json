@@ -77,7 +77,7 @@
       "type": 3,
       "content": {
         "version": "KqlItem/1.0",
-        "query": "pageViews\n| extend RoleName = iif(isempty(cloud_RoleName), '(untagged)', cloud_RoleName)\n| where '{Site}' == 'All' or RoleName == '{Site}'\n| summarize Views = count() by bin(timestamp, 1d), Site = RoleName\n| order by timestamp asc",
+        "query": "let base = pageViews | extend RoleName = iif(isempty(cloud_RoleName), '(untagged)', cloud_RoleName) | where '{Site}' == 'All' or RoleName == '{Site}' | summarize Views = count() by bin(timestamp, 1d), Site = RoleName;\nbase\n| union (base | summarize n = count() | where n == 0 | project timestamp = now(), Site = 'No data', Views = 0)\n| order by timestamp asc",
         "size": 0,
         "title": "Page views over time, by site",
         "queryType": 0,
@@ -91,7 +91,7 @@
       "type": 3,
       "content": {
         "version": "KqlItem/1.0",
-        "query": "pageViews\n| extend RoleName = iif(isempty(cloud_RoleName), '(untagged)', cloud_RoleName)\n| where '{Site}' == 'All' or RoleName == '{Site}'\n| summarize Views = count() by Site = RoleName\n| order by Views desc",
+        "query": "let base = pageViews | extend RoleName = iif(isempty(cloud_RoleName), '(untagged)', cloud_RoleName) | where '{Site}' == 'All' or RoleName == '{Site}' | summarize Views = count() by Site = RoleName;\nbase\n| union (base | summarize n = count() | where n == 0 | project Site = 'No data', Views = 0)\n| order by Views desc",
         "size": 1,
         "title": "Traffic share by site",
         "queryType": 0,
@@ -143,7 +143,7 @@
       "type": 3,
       "content": {
         "version": "KqlItem/1.0",
-        "query": "customEvents\n| where name == 'ArticleEngagement'\n| extend RoleName = iif(isempty(cloud_RoleName), '(untagged)', cloud_RoleName)\n| where '{Site}' == 'All' or RoleName == '{Site}'\n| extend EngagementType = tostring(customDimensions['engagementType'])\n| summarize Events = count() by EngagementType\n| order by Events desc",
+        "query": "let base = customEvents | where name == 'ArticleEngagement' | extend RoleName = iif(isempty(cloud_RoleName), '(untagged)', cloud_RoleName) | where '{Site}' == 'All' or RoleName == '{Site}' | extend EngagementType = tostring(customDimensions['engagementType']) | summarize Events = count() by EngagementType;\nbase\n| union (base | summarize n = count() | where n == 0 | project EngagementType = 'No data', Events = 0)\n| order by Events desc",
         "size": 1,
         "title": "Engagement by type (scroll depth / time on page)",
         "queryType": 0,
@@ -176,7 +176,7 @@
       "type": 3,
       "content": {
         "version": "KqlItem/1.0",
-        "query": "pageViews\n| extend RoleName = iif(isempty(cloud_RoleName), '(untagged)', cloud_RoleName)\n| where '{Site}' == 'All' or RoleName == '{Site}'\n| summarize Views = count() by Browser = client_Browser\n| top 10 by Views desc",
+        "query": "let base = pageViews | extend RoleName = iif(isempty(cloud_RoleName), '(untagged)', cloud_RoleName) | where '{Site}' == 'All' or RoleName == '{Site}' | summarize Views = count() by Browser = client_Browser;\nbase\n| union (base | summarize n = count() | where n == 0 | project Browser = 'No data', Views = 0)\n| top 10 by Views desc",
         "size": 1,
         "title": "Browsers",
         "queryType": 0,
